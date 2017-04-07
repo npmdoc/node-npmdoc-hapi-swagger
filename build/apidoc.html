@@ -1,0 +1,4109 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/glennjones/hapi-swagger#readme"
+
+    >hapi-swagger (v7.7.0)</a>
+</h1>
+<h4>A swagger documentation UI generator plugin for hapi</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger">module hapi-swagger</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.definitions">
+            function <span class="apidocSignatureSpan">hapi-swagger.</span>definitions
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.paths">
+            function <span class="apidocSignatureSpan">hapi-swagger.</span>paths
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.properties">
+            function <span class="apidocSignatureSpan">hapi-swagger.</span>properties
+            <span class="apidocSignatureSpan">(settings, definitionCollection, altDefinitionCollection, definitionCache )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.register">
+            function <span class="apidocSignatureSpan">hapi-swagger.</span>register
+            <span class="apidocSignatureSpan">(plugin, options, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.responses">
+            function <span class="apidocSignatureSpan">hapi-swagger.</span>responses
+            <span class="apidocSignatureSpan">(settings, definitionCollection, altDefinitionCollection, definitionCache)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.</span>builder</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.</span>definitions.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.</span>filter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.</span>group</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.</span>info</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.</span>parameters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.</span>paths.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.</span>properties.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.</span>responses.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.</span>sort</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.</span>tags</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.</span>utilities</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.</span>validate</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.builder">module hapi-swagger.builder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.builder.dereference">
+            function <span class="apidocSignatureSpan">hapi-swagger.builder.</span>dereference
+            <span class="apidocSignatureSpan">(schema, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.builder.getSwaggerJSON">
+            function <span class="apidocSignatureSpan">hapi-swagger.builder.</span>getSwaggerJSON
+            <span class="apidocSignatureSpan">(settings, request, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.builder.</span>default</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.builder.</span>schema</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.definitions">module hapi-swagger.definitions</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.definitions.definitions">
+            function <span class="apidocSignatureSpan">hapi-swagger.</span>definitions
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.definitions.prototype">module hapi-swagger.definitions.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.definitions.prototype.append">
+            function <span class="apidocSignatureSpan">hapi-swagger.definitions.prototype.</span>append
+            <span class="apidocSignatureSpan">(definitionName, definition, currentCollection, settings)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.filter">module hapi-swagger.filter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.filter.byTags">
+            function <span class="apidocSignatureSpan">hapi-swagger.filter.</span>byTags
+            <span class="apidocSignatureSpan">(tags, routes)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.group">module hapi-swagger.group</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.group.appendGroupByPath">
+            function <span class="apidocSignatureSpan">hapi-swagger.group.</span>appendGroupByPath
+            <span class="apidocSignatureSpan">(pathPrefixSize, basePath, routes, pathReplacements)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.group.getNameByPath">
+            function <span class="apidocSignatureSpan">hapi-swagger.group.</span>getNameByPath
+            <span class="apidocSignatureSpan">(pathPrefixSize, basePath, path, pathReplacements)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.info">module hapi-swagger.info</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.info.build">
+            function <span class="apidocSignatureSpan">hapi-swagger.info.</span>build
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.info.</span>defaults</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.info.</span>schema</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.parameters">module hapi-swagger.parameters</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.parameters.fromProperties">
+            function <span class="apidocSignatureSpan">hapi-swagger.parameters.</span>fromProperties
+            <span class="apidocSignatureSpan">(schemaObj, parameterType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.parameters.</span>allowedProps</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.paths">module hapi-swagger.paths</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.paths.paths">
+            function <span class="apidocSignatureSpan">hapi-swagger.</span>paths
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.paths.prototype">module hapi-swagger.paths.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.paths.prototype.build">
+            function <span class="apidocSignatureSpan">hapi-swagger.paths.prototype.</span>build
+            <span class="apidocSignatureSpan">(routes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.paths.prototype.buildRoutes">
+            function <span class="apidocSignatureSpan">hapi-swagger.paths.prototype.</span>buildRoutes
+            <span class="apidocSignatureSpan">(routes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.paths.prototype.getDefaultStructures">
+            function <span class="apidocSignatureSpan">hapi-swagger.paths.prototype.</span>getDefaultStructures
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.paths.prototype.getSwaggerStructures">
+            function <span class="apidocSignatureSpan">hapi-swagger.paths.prototype.</span>getSwaggerStructures
+            <span class="apidocSignatureSpan">(joiObj, parameterType, useDefinitions, isAlt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.paths.prototype.testParameterError">
+            function <span class="apidocSignatureSpan">hapi-swagger.paths.prototype.</span>testParameterError
+            <span class="apidocSignatureSpan">(joiObj, parameterType, path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.properties">module hapi-swagger.properties</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.properties.properties">
+            function <span class="apidocSignatureSpan">hapi-swagger.</span>properties
+            <span class="apidocSignatureSpan">(settings, definitionCollection, altDefinitionCollection, definitionCache )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.properties.prototype">module hapi-swagger.properties.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.properties.prototype.getDefinitionCollection">
+            function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>getDefinitionCollection
+            <span class="apidocSignatureSpan">(isAlt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.properties.prototype.getDefinitionRef">
+            function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>getDefinitionRef
+            <span class="apidocSignatureSpan">(isAlt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.properties.prototype.parseAlternatives">
+            function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parseAlternatives
+            <span class="apidocSignatureSpan">(property, joiObj, name, parameterType, useDefinitions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.properties.prototype.parseArray">
+            function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parseArray
+            <span class="apidocSignatureSpan">(property, joiObj, name, parameterType, useDefinitions, isAlt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.properties.prototype.parseDate">
+            function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parseDate
+            <span class="apidocSignatureSpan">(property, joiObj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.properties.prototype.parseNumber">
+            function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parseNumber
+            <span class="apidocSignatureSpan">(property, joiObj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.properties.prototype.parseObject">
+            function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parseObject
+            <span class="apidocSignatureSpan">(property, joiObj, name, parameterType, useDefinitions, isAlt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.properties.prototype.parseProperty">
+            function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parseProperty
+            <span class="apidocSignatureSpan">(name, joiObj, parent, parameterType, useDefinitions, isAlt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.properties.prototype.parsePropertyMetadata">
+            function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parsePropertyMetadata
+            <span class="apidocSignatureSpan">(property, name, parent, joiObj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.properties.prototype.parseString">
+            function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parseString
+            <span class="apidocSignatureSpan">(property, joiObj)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.responses">module hapi-swagger.responses</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.responses.responses">
+            function <span class="apidocSignatureSpan">hapi-swagger.</span>responses
+            <span class="apidocSignatureSpan">(settings, definitionCollection, altDefinitionCollection, definitionCache)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.responses.prototype">module hapi-swagger.responses.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.responses.prototype.build">
+            function <span class="apidocSignatureSpan">hapi-swagger.responses.prototype.</span>build
+            <span class="apidocSignatureSpan">(userDefindedSchemas, defaultSchema, statusSchemas, useDefinitions, isAlt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.responses.prototype.getResponse">
+            function <span class="apidocSignatureSpan">hapi-swagger.responses.prototype.</span>getResponse
+            <span class="apidocSignatureSpan">(statusCode, joiObj, useDefinitions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.responses.prototype.optionOverride">
+            function <span class="apidocSignatureSpan">hapi-swagger.responses.prototype.</span>optionOverride
+            <span class="apidocSignatureSpan">(discoveredSchemas, userDefindedSchemas, useDefinitions, isAlt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.sort">module hapi-swagger.sort</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.sort.paths">
+            function <span class="apidocSignatureSpan">hapi-swagger.sort.</span>paths
+            <span class="apidocSignatureSpan">(sortType, routes)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.tags">module hapi-swagger.tags</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.tags.build">
+            function <span class="apidocSignatureSpan">hapi-swagger.tags.</span>build
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hapi-swagger.tags.</span>schema</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.utilities">module hapi-swagger.utilities</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.createId">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>createId
+            <span class="apidocSignatureSpan">(method, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.deleteEmptyProperties">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>deleteEmptyProperties
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.findAndRenameKey">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>findAndRenameKey
+            <span class="apidocSignatureSpan">(obj, findKey, replaceKey)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.first">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>first
+            <span class="apidocSignatureSpan">(array)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.firstBy">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>firstBy
+            <span class="apidocSignatureSpan">(f, d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.geJoiLabel">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>geJoiLabel
+            <span class="apidocSignatureSpan">(joiObj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.getJoiMetaProperty">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>getJoiMetaProperty
+            <span class="apidocSignatureSpan">(joiObj, propertyName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.hasJoiChildren">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>hasJoiChildren
+            <span class="apidocSignatureSpan">(joiObj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.hasJoiMeta">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>hasJoiMeta
+            <span class="apidocSignatureSpan">(joiObj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.hasKey">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>hasKey
+            <span class="apidocSignatureSpan">(obj, findKey)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.hasProperties">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>hasProperties
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.isFunction">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>isFunction
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.isJoi">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>isJoi
+            <span class="apidocSignatureSpan">(joiObj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.isObject">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>isObject
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.isRegex">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>isRegex
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.removeProps">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>removeProps
+            <span class="apidocSignatureSpan">(obj, listOfProps)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.removeTrailingSlash">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>removeTrailingSlash
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.replaceInPath">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>replaceInPath
+            <span class="apidocSignatureSpan">(path, applyTo, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.replaceValue">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>replaceValue
+            <span class="apidocSignatureSpan">(array, current, replacement)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.sortFirstItem">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>sortFirstItem
+            <span class="apidocSignatureSpan">(array, firstItem)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.startsWith">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>startsWith
+            <span class="apidocSignatureSpan">(str, test)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.toJoiObject">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>toJoiObject
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.utilities.toTitleCase">
+            function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>toTitleCase
+            <span class="apidocSignatureSpan">(word)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hapi-swagger.validate">module hapi-swagger.validate</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.validate.log">
+            function <span class="apidocSignatureSpan">hapi-swagger.validate.</span>log
+            <span class="apidocSignatureSpan">(doc, logFnc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hapi-swagger.validate.test">
+            function <span class="apidocSignatureSpan">hapi-swagger.validate.</span>test
+            <span class="apidocSignatureSpan">(doc, next)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger" id="apidoc.module.hapi-swagger">module hapi-swagger</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.definitions" id="apidoc.element.hapi-swagger.definitions">
+        function <span class="apidocSignatureSpan">hapi-swagger.</span>definitions
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">definitions = function (settings) {
+
+    this.settings = settings;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.paths" id="apidoc.element.hapi-swagger.paths">
+        function <span class="apidocSignatureSpan">hapi-swagger.</span>paths
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">paths = function (settings) {
+
+    this.settings = settings;
+    this.definitions = new Definitions(settings);
+    this.properties = new Properties(settings, {}, {});
+    this.responses = new Responses(settings, {}, {});
+
+
+    this.defaults = {
+        responses: {}
+    };
+
+    this.schema = Joi.object({
+        tags: Joi.array().items(Joi.string()),
+        summary: Joi.string(),
+        description: Joi.string(),
+        externalDocs: Joi.object({
+            description: Joi.string(),
+            url: Joi.string().uri()
+        }),
+        operationId: Joi.string(),
+        consumes: Joi.array().items(Joi.string()),
+        produces: Joi.array().items(Joi.string()),
+        parameters: Joi.array().items(Joi.object()),
+        responses: Joi.object().required(),
+        schemes: Joi.array().items(Joi.string().valid([&#x27;http&#x27;, &#x27;https&#x27;, &#x27;ws&#x27;, &#x27;wss&#x27;])),
+        deprecated: Joi.boolean(),
+        security: Joi.array().items(Joi.object())
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+out.info = Info.build(settings);
+out.tags = Tags.build(settings);
+
+let routes = connection.table();
+
+routes = Filter.byTags([&#x27;api&#x27;], routes);
+Sort.<span class="apidocCodeKeywordSpan">paths</span>(settings.sortPaths, routes);
+
+// filter routes displayed based on tags passed in query string
+if (request.query.tags) {
+    let filterTags = request.query.tags.split(&#x27;,&#x27;);
+    routes = Filter.byTags(filterTags, routes);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.properties" id="apidoc.element.hapi-swagger.properties">
+        function <span class="apidocSignatureSpan">hapi-swagger.</span>properties
+        <span class="apidocSignatureSpan">(settings, definitionCollection, altDefinitionCollection, definitionCache )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">properties = function (settings, definitionCollection, altDefinitionCollection, definitionCache ) {
+
+    this.settings = settings;
+    this.definitionCollection = definitionCollection;
+    this.altDefinitionCollection = altDefinitionCollection;
+    // definitionCache has to be an array of two WeakMaps
+    this.definitionCache = definitionCache;
+
+    this.definitions = new Definitions(settings);
+
+
+    // swagger type can be &#x27;string&#x27;, &#x27;number&#x27;, &#x27;integer&#x27;, &#x27;boolean&#x27;, &#x27;array&#x27; or &#x27;file&#x27;
+    this.simpleTypePropertyMap = {
+        &#x27;boolean&#x27;: { &#x27;type&#x27;: &#x27;boolean&#x27; },
+        &#x27;binary&#x27;: { &#x27;type&#x27;: &#x27;string&#x27;, &#x27;format&#x27;: &#x27;binary&#x27; },
+        &#x27;date&#x27;: { &#x27;type&#x27;: &#x27;string&#x27;, &#x27;format&#x27;: &#x27;date&#x27; },
+        &#x27;number&#x27;: { &#x27;type&#x27;: &#x27;number&#x27; },
+        &#x27;string&#x27;: { &#x27;type&#x27;: &#x27;string&#x27; }
+    };
+
+    this.complexTypePropertyMap = {
+        &#x27;any&#x27;: { &#x27;type&#x27;: &#x27;string&#x27; },
+        &#x27;array&#x27;: { &#x27;type&#x27;: &#x27;array&#x27; },
+        &#x27;func&#x27;: { &#x27;type&#x27;: &#x27;string&#x27; },
+        &#x27;object&#x27;: { &#x27;type&#x27;: &#x27;object&#x27; },
+        &#x27;alternatives&#x27;: { &#x27;type&#x27;: &#x27;alternatives&#x27; }
+    };
+
+    // merge
+    this.propertyMap = Hoek.applyToDefaults(this.simpleTypePropertyMap, this.complexTypePropertyMap);
+
+    //this.allowedProps = [&#x27;$ref&#x27;,&#x27;format&#x27;,&#x27;title&#x27;,&#x27;description&#x27;,&#x27;default&#x27;,&#x27;multipleOf&#x27;,&#x27;maximum&#x27;,&#x27;exclusiveMaximum&#x27;,&#x27;minimum&#x27;,&#x27;
+exclusiveMinimum&#x27;,&#x27;maxLength&#x27;,&#x27;minLength&#x27;,&#x27;pattern&#x27;,&#x27;maxItems&#x27;,&#x27;minItems&#x27;,&#x27;uniqueItems&#x27;,&#x27;maxProperties&#x27;,&#x27;minProperties&#x27;,&#x27;required
+&#x27;,&#x27;enum&#x27;,&#x27;type&#x27;,&#x27;items&#x27;,&#x27;allOf&#x27;,&#x27;properties&#x27;,&#x27;additionalProperties&#x27;,&#x27;discriminator&#x27;,&#x27;readOnly&#x27;,&#x27;xml&#x27;,&#x27;externalDocs&#x27;,&#x27;example&#x27;];
+    // add none swagger property needed to flag touched state of required property
+    //this.allowedProps.push(&#x27;optional&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.register" id="apidoc.element.hapi-swagger.register">
+        function <span class="apidocSignatureSpan">hapi-swagger.</span>register
+        <span class="apidocSignatureSpan">(plugin, options, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (plugin, options, next) {
+
+
+    let settings = Hoek.applyToDefaults(Defaults, options, true);
+    const publicDirPath = Path.resolve(__dirname, &#x27;..&#x27;, &#x27;public&#x27;);
+    const swaggerDirPath = Path.join(publicDirPath, &#x27;swaggerui&#x27;);
+
+    settings.log = (tags, data) =&#x3e; {
+
+        tags.unshift(&#x27;hapi-swagger&#x27;);
+        if (settings.debug) {
+            plugin.log(tags, data);
+        }
+    };
+    settings.log([&#x27;info&#x27;], &#x27;Started&#x27;);
+
+    // add server method for caching
+    if (settings.cache) {
+        // set default
+        settings.cache.segment = &#x27;hapi-swagger&#x27;;
+        if (!settings.cache.generateTimeout) {
+            settings.cache.generateTimeout = 30 * 1000;
+        }
+
+        plugin.method(&#x27;getSwaggerJSON&#x27;, Builder.getSwaggerJSON, {
+            cache: settings.cache,
+            generateKey: () =&#x3e; {
+
+                return &#x27;hapi-swagger&#x27;;
+            }
+        });
+    }
+
+
+    // add routing swagger json
+    plugin.route([{
+        method: &#x27;GET&#x27;,
+        path: settings.jsonPath,
+        config: {
+            auth: settings.auth,
+            cors: settings.cors,
+            handler: (request, reply) =&#x3e; {
+
+                Joi.assert(settings, schema);
+
+                if (settings.cache) {
+<span class="apidocCodeCommentSpan">                    /*eslint no-unused-vars:0 */
+</span>                    plugin.methods.getSwaggerJSON(settings, request, (err, json, cached, report) =&#x3e; {
+
+                        /* $lab:coverage:off$ */
+                        if (err) {
+                            reply(err);
+                            /* $lab:coverage:on$ */
+                        } else {
+                            //console.log(JSON.stringify(report));
+                            const lastModified = cached ? new Date(cached.stored) : new Date();
+                            reply(json).header(&#x27;last-modified&#x27;, lastModified.toUTCString());
+                        }
+                    });
+                } else {
+                    Joi.assert(settings, schema);
+                    Builder.getSwaggerJSON(settings, request, (err, json) =&#x3e; {
+
+                        reply(json);
+                    });
+                }
+            },
+            plugins: {
+                &#x27;hapi-swagger&#x27;: false
+            }
+        }
+    }]);
+
+
+    // only add &#x27;inert&#x27; and &#x27;vision&#x27; based routes if needed
+    if (settings.documentationPage === true || settings.swaggerUI === true) {
+
+        // make sure we have other plug-in dependencies
+        plugin.dependency([&#x27;inert&#x27;, &#x27;vision&#x27;], (pluginWithDependencies, nextWithDependencies) =&#x3e; {
+
+            // add routing for swaggerui static assets /swaggerui/
+            pluginWithDependencies.views({
+                engines: {
+                    html: {
+                        module: require(&#x27;handlebars&#x27;)
+                    }
+                },
+                path: swaggerDirPath
+            });
+
+            // add documentation page
+            if (settings.documentationPage === true) {
+                pluginWithDependencies.route([{
+                    method: &#x27;GET&#x27;,
+                    path: settings.documentationPath,
+                    config: {
+                        auth: settings.auth
+                    },
+                    handler: (request, reply) =&#x3e; {
+
+                        reply.view(&#x27;index.html&#x27;, {});
+                    }
+                }]);
+            }
+
+            // add swagger UI if asked for or need by documentation page
+            if (settings.documentationPage === true || settings.swaggerUI === true) {
+                pluginWithDependencies.route([{
+                    method: &#x27;GET&#x27;,
+                    path: settings.swaggerUIPath + &#x27;{path*}&#x27;,
+                    config: {
+                        auth: settings.auth
+                    },
+                    handler: {
+                        directory: {
+                            path: swaggerDirPath + Path.sep,
+                            listing: true,
+                            index: false
+                        }
+                    }
+                }, {
+                    method: &#x27;GET&#x27;,
+                    path: settings.swaggerUIPath + &#x27; ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const options = {
+info: {
+        &#x27;title&#x27;: &#x27;Test API Documentation&#x27;,
+        &#x27;version&#x27;: Pack.version,
+    }
+};
+
+server.<span class="apidocCodeKeywordSpan">register</span>([
+Inert,
+Vision,
+{
+    &#x27;register&#x27;: HapiSwagger,
+    &#x27;options&#x27;: options
+}], (err) =&#x3e; {
+    server.start( (err) =&#x3e; {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.responses" id="apidoc.element.hapi-swagger.responses">
+        function <span class="apidocSignatureSpan">hapi-swagger.</span>responses
+        <span class="apidocSignatureSpan">(settings, definitionCollection, altDefinitionCollection, definitionCache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">responses = function (settings, definitionCollection, altDefinitionCollection, definitionCache) {
+
+    this.settings = settings;
+    this.definitionCollection = definitionCollection;
+    this.altDefinitionCollection = altDefinitionCollection;
+
+    this.definitions = new Definitions(settings);
+    this.properties = new Properties(settings, this.definitionCollection, this.altDefinitionCollection, definitionCache);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.builder" id="apidoc.module.hapi-swagger.builder">module hapi-swagger.builder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.builder.dereference" id="apidoc.element.hapi-swagger.builder.dereference">
+        function <span class="apidocSignatureSpan">hapi-swagger.builder.</span>dereference
+        <span class="apidocSignatureSpan">(schema, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dereference = function (schema, callback) {
+
+    JSONDeRef.dereference(schema, function (err, json) {
+
+        if (!err) {
+            delete json.definitions;
+            delete json[&#x27;x-alt-definitions&#x27;];
+        } else {
+            err = { &#x27;error&#x27;: &#x27;fail to dereference schema&#x27; };
+        }
+        callback(err, json);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    out = internals.removeNoneSchemaOptions(out);
+
+    if (settings.debug) {
+        Validate.log(out, settings.log);
+    }
+
+    if (settings.deReference === true) {
+        builder.<span class="apidocCodeKeywordSpan">dereference</span>(out, callback);
+    } else {
+        callback(null, out);
+    }
+};
+
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.builder.getSwaggerJSON" id="apidoc.element.hapi-swagger.builder.getSwaggerJSON">
+        function <span class="apidocSignatureSpan">hapi-swagger.builder.</span>getSwaggerJSON
+        <span class="apidocSignatureSpan">(settings, request, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSwaggerJSON = function (settings, request, callback) {
+
+    // remove items that cannot be changed by user
+    delete settings.swagger;
+    let connection = request.connection;
+    let namedConnection = null;
+
+    if (settings.connectionLabel) {
+        connection = namedConnection = request.server.select(settings.connectionLabel).connections[0];
+        if (request.server.select(settings.connectionLabel).connections.length === 1) {
+            request.server.log([&#x27;error&#x27;], &#x27;connectionLabel should only define one connection to document&#x27;);
+        }
+    }
+
+    // collect root information
+    builder.default.host = internals.getHost(request, namedConnection);
+    builder.default.schemes = [internals.getSchema(request, connection)];
+
+    settings = Hoek.applyToDefaults(builder.default, settings);
+    if (settings.basePath !== &#x27;/&#x27;) {
+        settings.basePath = Utilities.removeTrailingSlash(settings.basePath);
+    }
+    let out = internals.removeNoneSchemaOptions(settings);
+    Joi.assert(out, builder.schema);
+
+
+    out.info = Info.build(settings);
+    out.tags = Tags.build(settings);
+
+    let routes = connection.table();
+
+    routes = Filter.byTags([&#x27;api&#x27;], routes);
+    Sort.paths(settings.sortPaths, routes);
+
+    // filter routes displayed based on tags passed in query string
+    if (request.query.tags) {
+        let filterTags = request.query.tags.split(&#x27;,&#x27;);
+        routes = Filter.byTags(filterTags, routes);
+    }
+
+    // append group property - by path
+    Group.appendGroupByPath(settings.pathPrefixSize, settings.basePath, routes, settings.pathReplacements);
+
+    let paths = new Paths(settings);
+    let pathData = paths.build(routes);
+    out.paths = pathData.paths;
+    out.definitions = pathData.definitions;
+    if (Utilities.hasProperties(pathData[&#x27;x-alt-definitions&#x27;])) {
+        out[&#x27;x-alt-definitions&#x27;] = pathData[&#x27;x-alt-definitions&#x27;];
+    }
+    out = internals.removeNoneSchemaOptions(out);
+
+    if (settings.debug) {
+        Validate.log(out, settings.log);
+    }
+
+    if (settings.deReference === true) {
+        builder.dereference(out, callback);
+    } else {
+        callback(null, out);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.definitions" id="apidoc.module.hapi-swagger.definitions">module hapi-swagger.definitions</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.definitions.definitions" id="apidoc.element.hapi-swagger.definitions.definitions">
+        function <span class="apidocSignatureSpan">hapi-swagger.</span>definitions
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">definitions = function (settings) {
+
+    this.settings = settings;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.definitions.prototype" id="apidoc.module.hapi-swagger.definitions.prototype">module hapi-swagger.definitions.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.definitions.prototype.append" id="apidoc.element.hapi-swagger.definitions.prototype.append">
+        function <span class="apidocSignatureSpan">hapi-swagger.definitions.prototype.</span>append
+        <span class="apidocSignatureSpan">(definitionName, definition, currentCollection, settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">append = function (definitionName, definition, currentCollection, settings) {
+
+    let out = null;
+
+    definition = internals.formatProperty(definition);
+
+    // remove required if its not an array
+    //if (definition.required &#x26;&#x26; !Array.isArray(definition.required)) {
+    //    delete definition.required;
+    //}
+
+    // remove unneeded properties
+    delete definition.name;
+
+    // find existing definition by this definitionName
+    let foundDefinition = currentCollection[definitionName];
+    if (foundDefinition) {
+        // deep compare objects
+        if (Hoek.deepEqual(foundDefinition, definition)) {
+            // return existing definitionName if existing object is exactly the same
+            out = definitionName;
+        } else {
+            // create new definition
+            out = internals.append(null, definition, currentCollection, settings);
+        }
+    } else {
+        // create new definition
+        out = internals.append(definitionName, definition, currentCollection, settings);
+    }
+
+    return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (foundDefinition) {
+    // deep compare objects
+    if (Hoek.deepEqual(foundDefinition, definition)) {
+        // return existing definitionName if existing object is exactly the same
+        out = definitionName;
+    } else {
+        // create new definition
+        out = internals.<span class="apidocCodeKeywordSpan">append</span>(null, definition, currentCollection, settings);
+    }
+} else {
+    // create new definition
+    out = internals.append(definitionName, definition, currentCollection, settings);
+}
+
+return out;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.filter" id="apidoc.module.hapi-swagger.filter">module hapi-swagger.filter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.filter.byTags" id="apidoc.element.hapi-swagger.filter.byTags">
+        function <span class="apidocSignatureSpan">hapi-swagger.filter.</span>byTags
+        <span class="apidocSignatureSpan">(tags, routes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">byTags = function (tags, routes) {
+
+    let tag;
+
+    return routes.filter((route) =&#x3e; {
+
+        let exit;
+        for (let i = 0; i &#x3c; tags.length; i++) {
+            switch (tags[i].substring(0, 1)) {
+                case &#x27;-&#x27;: // exclude tags that match this case
+                    tag = tags[i].substring(1, tags[i].length);
+                    if (Hoek.intersect(route.settings.tags, [tag]).length &#x3e; 0) {
+                        exit = true;
+                    }
+                    break;
+                case &#x27;+&#x27;: // (+) filter out tagged paths that do not have this tag!
+                    tag = tags[i].substring(1, tags[i].length);
+                    if (Hoek.intersect(route.settings.tags, [tag]).length === 0) {
+                        exit = true;
+                    }
+                    break;
+            }
+        }
+
+        // if we have reason to exit, then do so!
+        if (exit === true) {
+            return false;
+        }
+
+        // default behavior for tags is additive
+        if (Hoek.intersect(route.settings.tags, tags).length &#x3e; 0) {
+            return true;
+        }
+
+        // fallback or no tag defined
+        return false;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+out.info = Info.build(settings);
+out.tags = Tags.build(settings);
+
+let routes = connection.table();
+
+routes = Filter.<span class="apidocCodeKeywordSpan">byTags</span>([&#x27;api&#x27;], routes);
+Sort.paths(settings.sortPaths, routes);
+
+// filter routes displayed based on tags passed in query string
+if (request.query.tags) {
+    let filterTags = request.query.tags.split(&#x27;,&#x27;);
+    routes = Filter.byTags(filterTags, routes);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.group" id="apidoc.module.hapi-swagger.group">module hapi-swagger.group</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.group.appendGroupByPath" id="apidoc.element.hapi-swagger.group.appendGroupByPath">
+        function <span class="apidocSignatureSpan">hapi-swagger.group.</span>appendGroupByPath
+        <span class="apidocSignatureSpan">(pathPrefixSize, basePath, routes, pathReplacements)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">appendGroupByPath = function (pathPrefixSize, basePath, routes, pathReplacements) {
+
+    let out = [];
+
+    routes.forEach((route) =&#x3e; {
+        let prefix = group.getNameByPath(pathPrefixSize, basePath, route.path, pathReplacements);
+        // append tag reference to route
+        route.group = [prefix];
+        if (out.indexOf(prefix) === -1) {
+            out.push(prefix);
+        }
+    });
+
+    return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// filter routes displayed based on tags passed in query string
+if (request.query.tags) {
+    let filterTags = request.query.tags.split(&#x27;,&#x27;);
+    routes = Filter.byTags(filterTags, routes);
+}
+
+// append group property - by path
+Group.<span class="apidocCodeKeywordSpan">appendGroupByPath</span>(settings.pathPrefixSize, settings.basePath, routes, settings.
+pathReplacements);
+
+let paths = new Paths(settings);
+let pathData = paths.build(routes);
+out.paths = pathData.paths;
+out.definitions = pathData.definitions;
+if (Utilities.hasProperties(pathData[&#x27;x-alt-definitions&#x27;])) {
+    out[&#x27;x-alt-definitions&#x27;] = pathData[&#x27;x-alt-definitions&#x27;];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.group.getNameByPath" id="apidoc.element.hapi-swagger.group.getNameByPath">
+        function <span class="apidocSignatureSpan">hapi-swagger.group.</span>getNameByPath
+        <span class="apidocSignatureSpan">(pathPrefixSize, basePath, path, pathReplacements)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getNameByPath = function (pathPrefixSize, basePath, path, pathReplacements) {
+
+
+    if (pathReplacements) {
+        path = Utilities.replaceInPath(path, [&#x27;groups&#x27;], pathReplacements);
+    }
+
+    let i = 0;
+    let pathHead = [];
+    let parts = path.split(&#x27;/&#x27;);
+
+    while (parts.length &#x3e; 0) {
+        let item = parts.shift();
+
+        if (item !== &#x27;&#x27;) {
+            pathHead.push(item);
+            i++;
+        }
+        if (i &#x3e;= pathPrefixSize) {
+            break;
+        }
+    }
+    let name = pathHead.join(&#x27;/&#x27;);
+
+    if (basePath !== &#x27;/&#x27; &#x26;&#x26; Utilities.startsWith(&#x27;/&#x27; + name, basePath)) {
+
+        name = (&#x27;/&#x27; + name).replace(basePath, &#x27;&#x27;);
+
+        if (Utilities.startsWith(name, &#x27;/&#x27;)) {
+            name = name.replace(&#x27;/&#x27;, &#x27;&#x27;);
+        }
+    }
+    return name;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @return {Array}
+ */
+group.appendGroupByPath = function (pathPrefixSize, basePath, routes, pathReplacements) {
+
+let out = [];
+
+routes.forEach((route) =&#x3e; {
+    let prefix = group.<span class="apidocCodeKeywordSpan">getNameByPath</span>(pathPrefixSize, basePath, route.path, pathReplacements
+);
+    // append tag reference to route
+    route.group = [prefix];
+    if (out.indexOf(prefix) === -1) {
+        out.push(prefix);
+    }
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.info" id="apidoc.module.hapi-swagger.info">module hapi-swagger.info</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.info.build" id="apidoc.element.hapi-swagger.info.build">
+        function <span class="apidocSignatureSpan">hapi-swagger.info.</span>build
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">build = function (options) {
+
+    var out = (options.info) ? Hoek.applyToDefaults(info.defaults, options.info) : info.defaults;
+    Joi.assert(out, info.schema);
+    return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (settings.basePath !== &#x27;/&#x27;) {
+    settings.basePath = Utilities.removeTrailingSlash(settings.basePath);
+}
+let out = internals.removeNoneSchemaOptions(settings);
+Joi.assert(out, builder.schema);
+
+
+out.info = Info.<span class="apidocCodeKeywordSpan">build</span>(settings);
+out.tags = Tags.build(settings);
+
+let routes = connection.table();
+
+routes = Filter.byTags([&#x27;api&#x27;], routes);
+Sort.paths(settings.sortPaths, routes);
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.parameters" id="apidoc.module.hapi-swagger.parameters">module hapi-swagger.parameters</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.parameters.fromProperties" id="apidoc.element.hapi-swagger.parameters.fromProperties">
+        function <span class="apidocSignatureSpan">hapi-swagger.parameters.</span>fromProperties
+        <span class="apidocSignatureSpan">(schemaObj, parameterType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromProperties = function (schemaObj, parameterType) {
+
+
+
+    let out = [];
+   // if (this.allowedParameterTypes.indexOf(parameterType) === -1) {
+   //     return out;
+   // }
+
+    // if its a single parameter
+    if (schemaObj.properties === undefined) {
+
+        // console.log(&#x27;a&#x27;, JSON.stringify(schemaObj) + &#x27;\n&#x27;);
+
+        let item = Hoek.clone(schemaObj);
+        item.in = parameterType;
+        item.name = parameterType;
+        item.schema = {};
+        item.schema.type = item.type;
+        delete item.type;
+
+        // convert an object definition
+        if (item.$ref) {
+            item.schema.$ref = item.$ref;
+            // item.schema.type = &#x27;object&#x27;; // should have to do this but causes validations issues
+            delete item.$ref;
+        }
+
+        // reinstate x-alternatives at parameter level
+        if (schemaObj[&#x27;x-alternatives&#x27;]) {
+            item[&#x27;x-alternatives&#x27;] = schemaObj[&#x27;x-alternatives&#x27;];
+            delete item.schema[&#x27;x-alternatives&#x27;];
+        }
+
+        item = Utilities.removeProps(item, this.allowedProps);
+        if (!Hoek.deepEqual(item.schema, { &#x27;type&#x27;: &#x27;object&#x27; }, { prototype: false })) {
+            out.push(Utilities.deleteEmptyProperties(item));
+        }
+
+    // if its an array of parameters
+    } else {
+
+        //console.log(&#x27;b&#x27;, JSON.stringify(schemaObj) + &#x27;\n&#x27;);
+
+        // object to array
+        const keys = Object.keys(schemaObj.properties);
+        keys.forEach((element, index) =&#x3e; {
+
+            let key = keys[index];
+            let item = schemaObj.properties[key];
+            item.name = key;
+            item.in = parameterType;
+
+            // reinstate required at parameter level
+            if (schemaObj.required &#x26;&#x26; schemaObj.required.indexOf(key) &#x3e; -1) {
+                item.required = true;
+            }
+            if (schemaObj.optional &#x26;&#x26; schemaObj.optional.indexOf(key) &#x3e; -1) {
+                item.required = false;
+            }
+
+            item = Utilities.removeProps(item, this.allowedProps);
+            out.push(item);
+        });
+
+    }
+    return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    let outProperties;
+    let outParameters;
+
+    if (joiObj) {
+        // name, joiObj, parent, parameterType, useDefinitions, isAlt
+        outProperties = this.properties.parseProperty(null, joiObj, null, parameterType, useDefinitions, isAlt);
+        outParameters = Parameters.<span class="apidocCodeKeywordSpan">fromProperties</span>(outProperties, parameterType);
+    }
+    let out = {
+        properties: outProperties || {},
+        parameters: outParameters || []
+    };
+    return out;
+};
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.paths" id="apidoc.module.hapi-swagger.paths">module hapi-swagger.paths</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.paths.paths" id="apidoc.element.hapi-swagger.paths.paths">
+        function <span class="apidocSignatureSpan">hapi-swagger.</span>paths
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">paths = function (settings) {
+
+    this.settings = settings;
+    this.definitions = new Definitions(settings);
+    this.properties = new Properties(settings, {}, {});
+    this.responses = new Responses(settings, {}, {});
+
+
+    this.defaults = {
+        responses: {}
+    };
+
+    this.schema = Joi.object({
+        tags: Joi.array().items(Joi.string()),
+        summary: Joi.string(),
+        description: Joi.string(),
+        externalDocs: Joi.object({
+            description: Joi.string(),
+            url: Joi.string().uri()
+        }),
+        operationId: Joi.string(),
+        consumes: Joi.array().items(Joi.string()),
+        produces: Joi.array().items(Joi.string()),
+        parameters: Joi.array().items(Joi.object()),
+        responses: Joi.object().required(),
+        schemes: Joi.array().items(Joi.string().valid([&#x27;http&#x27;, &#x27;https&#x27;, &#x27;ws&#x27;, &#x27;wss&#x27;])),
+        deprecated: Joi.boolean(),
+        security: Joi.array().items(Joi.object())
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+out.info = Info.build(settings);
+out.tags = Tags.build(settings);
+
+let routes = connection.table();
+
+routes = Filter.byTags([&#x27;api&#x27;], routes);
+Sort.<span class="apidocCodeKeywordSpan">paths</span>(settings.sortPaths, routes);
+
+// filter routes displayed based on tags passed in query string
+if (request.query.tags) {
+    let filterTags = request.query.tags.split(&#x27;,&#x27;);
+    routes = Filter.byTags(filterTags, routes);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.paths.prototype" id="apidoc.module.hapi-swagger.paths.prototype">module hapi-swagger.paths.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.paths.prototype.build" id="apidoc.element.hapi-swagger.paths.prototype.build">
+        function <span class="apidocSignatureSpan">hapi-swagger.paths.prototype.</span>build
+        <span class="apidocSignatureSpan">(routes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">build = function (routes) {
+
+    let self = this;
+
+
+    let routesData = [];
+
+    // loop each route
+    routes.forEach((route) =&#x3e; {
+
+        let routeOptions = Hoek.reach(route, &#x27;settings.plugins.hapi-swagger&#x27;) || {};
+        let routeData = {
+            path: route.path,
+            method: route.method.toUpperCase(),
+            description: route.settings.description,
+            notes: route.settings.notes,
+            tags: Hoek.reach(route, &#x27;settings.tags&#x27;),
+            queryParams: Hoek.reach(route, &#x27;settings.validate.query&#x27;),
+            pathParams: Hoek.reach(route, &#x27;settings.validate.params&#x27;),
+            payloadParams: Hoek.reach(route, &#x27;settings.validate.payload&#x27;),
+            responseSchema: Hoek.reach(route, &#x27;settings.response.schema&#x27;),
+            responseStatus: Hoek.reach(route, &#x27;settings.response.status&#x27;),
+            headerParams: Hoek.reach(route, &#x27;settings.validate.headers&#x27;),
+            consumes: Hoek.reach(routeOptions, &#x27;consumes&#x27;) || null,
+            produces: Hoek.reach(routeOptions, &#x27;produces&#x27;) || null,
+            responses: Hoek.reach(routeOptions, &#x27;responses&#x27;) || null,
+            payloadType: Hoek.reach(routeOptions, &#x27;payloadType&#x27;) || null,
+            security: Hoek.reach(routeOptions, &#x27;security&#x27;) || null,
+            order: Hoek.reach(routeOptions, &#x27;order&#x27;) || null,
+            deprecated: Hoek.reach(routeOptions, &#x27;deprecated&#x27;) || null,
+            id: Hoek.reach(routeOptions, &#x27;id&#x27;) || null,
+            groups: route.group
+        };
+
+
+        routeData.path = Utilities.replaceInPath(routeData.path, [&#x27;endpoints&#x27;], this.settings.pathReplacements);
+
+
+        // user configured interface through route plugin options
+        if (Hoek.reach(routeOptions, &#x27;validate.query&#x27;)) {
+            routeData.queryParams = Utilities.toJoiObject(Hoek.reach(routeOptions, &#x27;validate.query&#x27;));
+        }
+        if (Hoek.reach(routeOptions, &#x27;validate.params&#x27;)) {
+            routeData.pathParams = Utilities.toJoiObject(Hoek.reach(routeOptions, &#x27;validate.params&#x27;));
+        }
+        if (Hoek.reach(routeOptions, &#x27;validate.headers&#x27;)) {
+            routeData.headerParams = Utilities.toJoiObject(Hoek.reach(routeOptions, &#x27;validate.headers&#x27;));
+        }
+        if (Hoek.reach(routeOptions, &#x27;validate.payload&#x27;)) {
+            // has different structure, just pass straight through
+            routeData.payloadParams = Hoek.reach(routeOptions, &#x27;validate.payload&#x27;);
+            // if its a native javascript object convert it to JOI
+            if (!routeData.payloadParams.isJoi) {
+                routeData.payloadParams = Joi.object(routeData.payloadParams);
+            }
+        }
+
+        // swap out any custom validation function for Joi object/string
+        [
+            &#x27;queryParams&#x27;,
+            &#x27;pathParams&#x27;,
+            &#x27;headerParams&#x27;,
+            &#x27;payloadParams&#x27;
+        ].forEach(function (property) {
+
+            // swap out any custom validation function for Joi object/string
+            if (Utilities.isFunction(routeData[property])) {
+                if (property !== &#x27;pathParams&#x27;) {
+                    self.settings.log([&#x27;vaildation&#x27;, &#x27;warning&#x27;], &#x27;Using a Joi.function for a query, header or payload is not supported
+.&#x27;);
+                    if (property === &#x27;payloadParams&#x27;) {
+                        routeData[property] = Joi.object().label(&#x27;Hidden Model&#x27;);
+                    } else {
+                        routeData[property] = Joi.object({ &#x27;Hidden Model&#x27;: Joi.string() });
+                    }
+                } else {
+                    self.settings.log([&#x27;vaildation&#x27;, &#x27;error&#x27;], &#x27;Using a Joi.function for a params is not supported and has been
+removed.&#x27;);
+                    routeData[property] = null;
+                }
+            }
+        });
+
+
+
+
+        // hapi wildcard method support
+        if (routeData.method === &#x27;*&#x27;) {
+            // OPTIONS not supported by Swagger and HEAD not support by HAPI
+            [&#x27;GET&#x27;, &#x27;POST&#x27;, &#x27;PUT&#x27;, &#x27;PATCH&#x27;, &#x27;DELETE&#x27;].forEach((method) =&#x3e; {
+
+                var newRoute = Hoek.clone(routeData);
+                newRoute.method = method.toUpperCase();
+                routesData.pus ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (settings.basePath !== &#x27;/&#x27;) {
+    settings.basePath = Utilities.removeTrailingSlash(settings.basePath);
+}
+let out = internals.removeNoneSchemaOptions(settings);
+Joi.assert(out, builder.schema);
+
+
+out.info = Info.<span class="apidocCodeKeywordSpan">build</span>(settings);
+out.tags = Tags.build(settings);
+
+let routes = connection.table();
+
+routes = Filter.byTags([&#x27;api&#x27;], routes);
+Sort.paths(settings.sortPaths, routes);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.paths.prototype.buildRoutes" id="apidoc.element.hapi-swagger.paths.prototype.buildRoutes">
+        function <span class="apidocSignatureSpan">hapi-swagger.paths.prototype.</span>buildRoutes
+        <span class="apidocSignatureSpan">(routes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildRoutes = function (routes) {
+
+    let self = this;
+    let pathObj = {};
+    let swagger = {
+        &#x27;definitions&#x27;: {},
+        &#x27;x-alt-definitions&#x27;: {}
+    };
+    let definitionCache = [
+        new WeakMap(),
+        new WeakMap()
+    ];
+
+    // reset properties
+    this.properties = new Properties(this.settings, swagger.definitions, swagger[&#x27;x-alt-definitions&#x27;], definitionCache);
+    this.responses = new Responses(this.settings, swagger.definitions, swagger[&#x27;x-alt-definitions&#x27;], definitionCache);
+
+    routes.forEach((route) =&#x3e; {
+
+        let method = route.method;
+        let path = internals.removeBasePath(route.path, this.settings.basePath, this.settings.pathReplacements);
+        let out = {
+            &#x27;summary&#x27;: route.description,
+            &#x27;operationId&#x27;: route.id || Utilities.createId(route.method, path),
+            &#x27;description&#x27;: route.notes,
+            &#x27;parameters&#x27;: [],
+            &#x27;consumes&#x27;: [],
+            &#x27;produces&#x27;: []
+        };
+
+        // tags in swagger are used for grouping
+        if (this.settings.grouping === &#x27;tags&#x27;) {
+            out.tags = route.tags.slice(0);
+            while (out.tags.indexOf(&#x27;api&#x27;) !== -1) {
+                out.tags.splice(out.tags.indexOf(&#x27;api&#x27;), 1);
+            }
+        }
+        else {
+            out.tags = route.groups;
+        }
+
+        out.description = Array.isArray(route.notes) ? route.notes.join(&#x27;&#x3c;br/&#x3e;&#x3c;br/&#x3e;&#x27;) : route.notes;
+
+        if (route.security) {
+            out.security = route.security;
+        }
+
+        // set from plugin options or from route options
+        let payloadType = internals.overload(this.settings.payloadType, route.payloadType);
+
+        // build payload either with JSON or form input
+        let payloadStructures = this.getDefaultStructures();
+        let payloadJoi = internals.getJOIObj(route, &#x27;payloadParams&#x27;);
+        if (payloadType.toLowerCase() === &#x27;json&#x27;) {
+            // set as json
+            payloadStructures = this.getSwaggerStructures(payloadJoi, &#x27;body&#x27;, true, false);
+        } else {
+            // set as formData
+            if (Utilities.hasJoiChildren(payloadJoi)) {
+                payloadStructures = this.getSwaggerStructures(payloadJoi, &#x27;formData&#x27;, false, false);
+            } else {
+                self.testParameterError(payloadJoi, &#x27;payload form-urlencoded&#x27;, path);
+            }
+            // add form data mimetype
+            out.consumes = [&#x27;application/x-www-form-urlencoded&#x27;];
+        }
+
+
+        // change form mimetype based on meta property &#x27;swaggerType&#x27;
+        if (internals.hasFileType(route)) {
+            out.consumes = [&#x27;multipart/form-data&#x27;];
+        }
+
+        // add user defined over automaticlly discovered
+        if (this.settings.consumes || route.consumes) {
+            out.consumes = internals.overload(this.settings.consumes, route.consumes);
+        }
+
+        if (this.settings.produces || route.produces) {
+            out.produces = internals.overload(this.settings.produces, route.produces);
+        }
+
+
+        // set required true/false for each path params
+        //var pathParams = this.properties.toParameters (internals.getJOIObj(route, &#x27;pathParams&#x27;), &#x27;path&#x27;, false);
+        let pathStructures = this.getDefaultStructures();
+        let pathJoi = internals.getJOIObj(route, &#x27;pathParams&#x27;);
+        if (Utilities.hasJoiChildren(pathJoi)) {
+            pathStructures = this.getSwaggerStructures(pathJoi, &#x27;path&#x27;, false, false);
+            pathStructures.parameters.forEach(function (item) {
+
+                // add required based on path pattern {prama} and {prama?}
+                if (item.required === undefined) {
+                    if (path.indexOf(&#x27;{&#x27; + item.name + &#x27;}&#x27;) &#x3e; -1) {
+                        item.required = true;
+                    }
+                    if (path.indexOf(&#x27;{&#x27; + item.name + &#x27;?}&#x27;) &#x3e; -1) {
+                        delete item.required;
+                    }
+                }
+                if (item.required === false) {
+                    delete item.required;
+                }
+                if (!item.required) {
+                    self.settings.log([&#x27;validation&#x27;, &#x27;warning&#x27;], ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+           });
+       } else {
+           routesData.push(routeData);
+       }
+   });
+
+
+   return this.<span class="apidocCodeKeywordSpan">buildRoutes</span>(routesData);
+};
+
+
+/**
+* build the swagger path section from hapi routes data
+*
+* @param  {Object} setting
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.paths.prototype.getDefaultStructures" id="apidoc.element.hapi-swagger.paths.prototype.getDefaultStructures">
+        function <span class="apidocSignatureSpan">hapi-swagger.paths.prototype.</span>getDefaultStructures
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDefaultStructures = function () {
+
+    return {
+        &#x27;properties&#x27;: {},
+        &#x27;parameters&#x27;: []
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    out.security = route.security;
+}
+
+// set from plugin options or from route options
+let payloadType = internals.overload(this.settings.payloadType, route.payloadType);
+
+// build payload either with JSON or form input
+let payloadStructures = this.<span class="apidocCodeKeywordSpan">getDefaultStructures</span>();
+let payloadJoi = internals.getJOIObj(route, &#x27;payloadParams&#x27;);
+if (payloadType.toLowerCase() === &#x27;json&#x27;) {
+    // set as json
+    payloadStructures = this.getSwaggerStructures(payloadJoi, &#x27;body&#x27;, true, false);
+} else {
+    // set as formData
+    if (Utilities.hasJoiChildren(payloadJoi)) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.paths.prototype.getSwaggerStructures" id="apidoc.element.hapi-swagger.paths.prototype.getSwaggerStructures">
+        function <span class="apidocSignatureSpan">hapi-swagger.paths.prototype.</span>getSwaggerStructures
+        <span class="apidocSignatureSpan">(joiObj, parameterType, useDefinitions, isAlt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSwaggerStructures = function (joiObj, parameterType, useDefinitions, isAlt) {
+
+    let outProperties;
+    let outParameters;
+
+    if (joiObj) {
+        // name, joiObj, parent, parameterType, useDefinitions, isAlt
+        outProperties = this.properties.parseProperty(null, joiObj, null, parameterType, useDefinitions, isAlt);
+        outParameters = Parameters.fromProperties(outProperties, parameterType);
+    }
+    let out = {
+        properties: outProperties || {},
+        parameters: outParameters || []
+    };
+    return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+let payloadType = internals.overload(this.settings.payloadType, route.payloadType);
+
+// build payload either with JSON or form input
+let payloadStructures = this.getDefaultStructures();
+let payloadJoi = internals.getJOIObj(route, &#x27;payloadParams&#x27;);
+if (payloadType.toLowerCase() === &#x27;json&#x27;) {
+    // set as json
+    payloadStructures = this.<span class="apidocCodeKeywordSpan">getSwaggerStructures</span>(payloadJoi, &#x27;body&#x27;, true,
+false);
+} else {
+    // set as formData
+    if (Utilities.hasJoiChildren(payloadJoi)) {
+        payloadStructures = this.getSwaggerStructures(payloadJoi, &#x27;formData&#x27;, false, false);
+    } else {
+        self.testParameterError(payloadJoi, &#x27;payload form-urlencoded&#x27;, path);
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.paths.prototype.testParameterError" id="apidoc.element.hapi-swagger.paths.prototype.testParameterError">
+        function <span class="apidocSignatureSpan">hapi-swagger.paths.prototype.</span>testParameterError
+        <span class="apidocSignatureSpan">(joiObj, parameterType, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">testParameterError = function (joiObj, parameterType, path) {
+
+    if (joiObj &#x26;&#x26; !Utilities.hasJoiChildren(joiObj)) {
+        this.settings.log([&#x27;validation&#x27;, &#x27;error&#x27;], &#x27;The &#x27; + path  + &#x27; route &#x27; + parameterType + &#x27; parameter was set, but not as
+a Joi.object() with child properties&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // set as json
+    payloadStructures = this.getSwaggerStructures(payloadJoi, &#x27;body&#x27;, true, false);
+} else {
+    // set as formData
+    if (Utilities.hasJoiChildren(payloadJoi)) {
+        payloadStructures = this.getSwaggerStructures(payloadJoi, &#x27;formData&#x27;, false, false);
+    } else {
+        self.<span class="apidocCodeKeywordSpan">testParameterError</span>(payloadJoi, &#x27;payload form-urlencoded&#x27;, path
+);
+    }
+    // add form data mimetype
+    out.consumes = [&#x27;application/x-www-form-urlencoded&#x27;];
+}
+
+
+// change form mimetype based on meta property &#x27;swaggerType&#x27;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.properties" id="apidoc.module.hapi-swagger.properties">module hapi-swagger.properties</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.properties.properties" id="apidoc.element.hapi-swagger.properties.properties">
+        function <span class="apidocSignatureSpan">hapi-swagger.</span>properties
+        <span class="apidocSignatureSpan">(settings, definitionCollection, altDefinitionCollection, definitionCache )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">properties = function (settings, definitionCollection, altDefinitionCollection, definitionCache ) {
+
+    this.settings = settings;
+    this.definitionCollection = definitionCollection;
+    this.altDefinitionCollection = altDefinitionCollection;
+    // definitionCache has to be an array of two WeakMaps
+    this.definitionCache = definitionCache;
+
+    this.definitions = new Definitions(settings);
+
+
+    // swagger type can be &#x27;string&#x27;, &#x27;number&#x27;, &#x27;integer&#x27;, &#x27;boolean&#x27;, &#x27;array&#x27; or &#x27;file&#x27;
+    this.simpleTypePropertyMap = {
+        &#x27;boolean&#x27;: { &#x27;type&#x27;: &#x27;boolean&#x27; },
+        &#x27;binary&#x27;: { &#x27;type&#x27;: &#x27;string&#x27;, &#x27;format&#x27;: &#x27;binary&#x27; },
+        &#x27;date&#x27;: { &#x27;type&#x27;: &#x27;string&#x27;, &#x27;format&#x27;: &#x27;date&#x27; },
+        &#x27;number&#x27;: { &#x27;type&#x27;: &#x27;number&#x27; },
+        &#x27;string&#x27;: { &#x27;type&#x27;: &#x27;string&#x27; }
+    };
+
+    this.complexTypePropertyMap = {
+        &#x27;any&#x27;: { &#x27;type&#x27;: &#x27;string&#x27; },
+        &#x27;array&#x27;: { &#x27;type&#x27;: &#x27;array&#x27; },
+        &#x27;func&#x27;: { &#x27;type&#x27;: &#x27;string&#x27; },
+        &#x27;object&#x27;: { &#x27;type&#x27;: &#x27;object&#x27; },
+        &#x27;alternatives&#x27;: { &#x27;type&#x27;: &#x27;alternatives&#x27; }
+    };
+
+    // merge
+    this.propertyMap = Hoek.applyToDefaults(this.simpleTypePropertyMap, this.complexTypePropertyMap);
+
+    //this.allowedProps = [&#x27;$ref&#x27;,&#x27;format&#x27;,&#x27;title&#x27;,&#x27;description&#x27;,&#x27;default&#x27;,&#x27;multipleOf&#x27;,&#x27;maximum&#x27;,&#x27;exclusiveMaximum&#x27;,&#x27;minimum&#x27;,&#x27;
+exclusiveMinimum&#x27;,&#x27;maxLength&#x27;,&#x27;minLength&#x27;,&#x27;pattern&#x27;,&#x27;maxItems&#x27;,&#x27;minItems&#x27;,&#x27;uniqueItems&#x27;,&#x27;maxProperties&#x27;,&#x27;minProperties&#x27;,&#x27;required
+&#x27;,&#x27;enum&#x27;,&#x27;type&#x27;,&#x27;items&#x27;,&#x27;allOf&#x27;,&#x27;properties&#x27;,&#x27;additionalProperties&#x27;,&#x27;discriminator&#x27;,&#x27;readOnly&#x27;,&#x27;xml&#x27;,&#x27;externalDocs&#x27;,&#x27;example&#x27;];
+    // add none swagger property needed to flag touched state of required property
+    //this.allowedProps.push(&#x27;optional&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.properties.prototype" id="apidoc.module.hapi-swagger.properties.prototype">module hapi-swagger.properties.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.properties.prototype.getDefinitionCollection" id="apidoc.element.hapi-swagger.properties.prototype.getDefinitionCollection">
+        function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>getDefinitionCollection
+        <span class="apidocSignatureSpan">(isAlt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDefinitionCollection = function (isAlt) {
+
+    return (isAlt === true) ? this.altDefinitionCollection : this.definitionCollection;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    // add object child properties
+    if (property.type === &#x27;object&#x27;) {
+if (Utilities.hasJoiChildren(joiObj)) {
+
+    property = this.parseObject(property, joiObj, name, parameterType, useDefinitions, isAlt);
+    if (useDefinitions === true) {
+        let refName = this.definitions.append(name, property, this.<span class="apidocCodeKeywordSpan">getDefinitionCollection</
+span>(isAlt), this.settings);
+        property = {
+            &#x27;$ref&#x27;: this.getDefinitionRef(isAlt) + refName,
+            &#x27;type&#x27;: &#x27;object&#x27;
+        };
+    }
+
+} else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.properties.prototype.getDefinitionRef" id="apidoc.element.hapi-swagger.properties.prototype.getDefinitionRef">
+        function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>getDefinitionRef
+        <span class="apidocSignatureSpan">(isAlt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDefinitionRef = function (isAlt) {
+
+    return (isAlt === true) ? &#x27;#/x-alt-definitions/&#x27; : &#x27;#/definitions/&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (property.type === &#x27;object&#x27;) {
+if (Utilities.hasJoiChildren(joiObj)) {
+
+    property = this.parseObject(property, joiObj, name, parameterType, useDefinitions, isAlt);
+    if (useDefinitions === true) {
+        let refName = this.definitions.append(name, property, this.getDefinitionCollection(isAlt), this.settings);
+        property = {
+            &#x27;$ref&#x27;: this.<span class="apidocCodeKeywordSpan">getDefinitionRef</span>(isAlt) + refName,
+            &#x27;type&#x27;: &#x27;object&#x27;
+        };
+    }
+
+} else {
+    // default empty object
+    property.properties = {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.properties.prototype.parseAlternatives" id="apidoc.element.hapi-swagger.properties.prototype.parseAlternatives">
+        function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parseAlternatives
+        <span class="apidocSignatureSpan">(property, joiObj, name, parameterType, useDefinitions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseAlternatives = function (property, joiObj, name, parameterType, useDefinitions) {
+
+    // convert .try() alternatives structures
+    if (Hoek.reach(joiObj, &#x27;_inner.matches.0.schema&#x27;)) {
+        // add first into definitionCollection
+        let child = joiObj._inner.matches[0].schema;
+        let childName = Utilities.geJoiLabel(joiObj);
+        //name, joiObj, parent, parameterType, useDefinitions, isAlt
+        property = this.parseProperty(childName, child, property, parameterType, useDefinitions, false);
+
+        // create the alternatives without appending to the definitionCollection
+        if (this.settings.xProperties === true) {
+            let altArray = joiObj._inner.matches.map((obj) =&#x3e; {
+                let altName = (Utilities.geJoiLabel(obj.schema) || name);
+                //name, joiObj, parent, parameterType, useDefinitions, isAlt
+                return this.parseProperty(altName, obj.schema, property, parameterType, useDefinitions, true);
+            });
+            property[&#x27;x-alternatives&#x27;] = Hoek.clone(altArray);
+        }
+    }
+
+    // convert .when() alternatives structures
+    else {
+        // add first into definitionCollection
+        let child = joiObj._inner.matches[0].then;
+        let childName = (Utilities.geJoiLabel(child) || name);
+        //name, joiObj, parent, parameterType, useDefinitions, isAlt
+        property = this.parseProperty(childName, child, property, parameterType, useDefinitions, false);
+
+        // create the alternatives without appending to the definitionCollection
+        if (this.settings.xProperties === true) {
+            let altArray = joiObj._inner.matches
+                .reduce((res, obj) =&#x3e; {
+                    obj.then &#x26;&#x26; res.push(obj.then);
+                    obj.otherwise &#x26;&#x26; res.push(obj.otherwise);
+                    return res;
+                }, [])
+                .map((joiNewObj) =&#x3e; {
+                    let altName = (Utilities.geJoiLabel(joiNewObj) || name);
+                    return this.parseProperty(altName, joiNewObj, property, parameterType, useDefinitions, true);
+                })
+                .filter((obj) =&#x3e; obj);
+            property[&#x27;x-alternatives&#x27;] = Hoek.clone(altArray);
+        }
+    }
+
+    //if (!property.$ref &#x26;&#x26; Utilities.geJoiLabel(joiObj)) {
+    //    property.name = Utilities.geJoiLabel(joiObj);
+    //}
+
+    return property;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        };
+    }
+}
+
+
+// add alternatives properties
+if (property.type === &#x27;alternatives&#x27;) {
+    property = this.<span class="apidocCodeKeywordSpan">parseAlternatives</span>(property, joiObj, name, parameterType, useDefinitions
+);
+}
+
+// convert property to file upload, if indicated by meta property
+if (Utilities.getJoiMetaProperty(joiObj, &#x27;swaggerType&#x27;) === &#x27;file&#x27;) {
+    property.type = &#x27;file&#x27;;
+    property.in = &#x27;formData&#x27;;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.properties.prototype.parseArray" id="apidoc.element.hapi-swagger.properties.prototype.parseArray">
+        function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parseArray
+        <span class="apidocSignatureSpan">(property, joiObj, name, parameterType, useDefinitions, isAlt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseArray = function (property, joiObj, name, parameterType, useDefinitions, isAlt) {
+
+    const describe = joiObj.describe();
+    property.minItems = internals.getArgByName(describe.rules, &#x27;min&#x27;);
+    property.maxItems = internals.getArgByName(describe.rules, &#x27;max&#x27;);
+
+
+    // add extended properties not part of openAPI spec
+    if (this.settings.xProperties === true) {
+        internals.convertRules(property, describe.rules, [
+            &#x27;length&#x27;,
+            &#x27;unique&#x27;
+        ], &#x27;x-constraint&#x27;);
+
+        if (describe.flags.sparse) {
+            internals.addToPropertyObject(property, &#x27;x-constraint&#x27;, &#x27;sparse&#x27;, true);
+        }
+        if (describe.flags.single) {
+            internals.addToPropertyObject(property, &#x27;x-constraint&#x27;, &#x27;single&#x27;, true);
+        }
+    }
+
+
+    // default the items with type:string
+    property.items = {
+        &#x27;type&#x27;: &#x27;string&#x27;
+    };
+
+    // set swaggers collectionFormat to one that works with hapi
+    if (parameterType === &#x27;query&#x27; || parameterType === &#x27;formData&#x27;) {
+        property.collectionFormat = &#x27;multi&#x27;;
+    }
+
+    // swagger appears to only support one array item type at a time, so grab the first one
+    let arrayItemTypes = joiObj._inner.items; // joiObj._inner.inclusions;
+    let arrayItem = Utilities.first(arrayItemTypes);
+
+    if (arrayItem) {
+        // get name of item if it has one
+        let itemName;
+        if (Utilities.geJoiLabel(arrayItem)) {
+            itemName = Utilities.geJoiLabel(arrayItem);
+        }
+
+        //name, joiObj, parent, parameterType, useDefinitions, isAlt
+        let arrayItemProperty = this.parseProperty(itemName, arrayItem, property, parameterType, useDefinitions, isAlt);
+        if (this.simpleTypePropertyMap[arrayItem._type.toLowerCase()]) {
+            // map simple types directly
+            property.items = {};
+            for (let key in arrayItemProperty) {
+                property.items[key] = arrayItemProperty[key];
+            }
+        } else {
+            property.items = arrayItemProperty;
+        }
+
+    }
+
+    property.name = name;
+    return property;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+}
+    }
+
+
+    // add array properties
+    if (property.type === &#x27;array&#x27;) {
+property = this.<span class="apidocCodeKeywordSpan">parseArray</span>(property, joiObj, name, parameterType, useDefinitions, isAlt
+);
+
+if (useDefinitions === true) {
+    let refName = this.definitions.append(name, property, this.getDefinitionCollection(isAlt), this.settings);
+    property = {
+        &#x27;$ref&#x27;: this.getDefinitionRef(isAlt) + refName,
+        &#x27;type&#x27;: &#x27;array&#x27;
+    };
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.properties.prototype.parseDate" id="apidoc.element.hapi-swagger.properties.prototype.parseDate">
+        function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parseDate
+        <span class="apidocSignatureSpan">(property, joiObj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseDate = function (property, joiObj) {
+
+    if (joiObj._flags.timestamp) {
+        property.type = &#x27;number&#x27;;
+        delete property.format;
+    }
+
+    return property;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // add number properties
+    if (property.type === &#x27;number&#x27;) {
+        property = this.parseNumber(property, joiObj);
+    }
+
+    // add date properties
+    if (property.type === &#x27;string&#x27; &#x26;&#x26; property.format === &#x27;date&#x27;) {
+        property = this.<span class="apidocCodeKeywordSpan">parseDate</span>(property, joiObj);
+    }
+
+    // add object child properties
+    if (property.type === &#x27;object&#x27;) {
+        if (Utilities.hasJoiChildren(joiObj)) {
+
+property = this.parseObject(property, joiObj, name, parameterType, useDefinitions, isAlt);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.properties.prototype.parseNumber" id="apidoc.element.hapi-swagger.properties.prototype.parseNumber">
+        function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parseNumber
+        <span class="apidocSignatureSpan">(property, joiObj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseNumber = function (property, joiObj) {
+
+    const describe = joiObj.describe();
+    property.minimum = internals.getArgByName(describe.rules, &#x27;min&#x27;);
+    property.maximum = internals.getArgByName(describe.rules, &#x27;max&#x27;);
+    if (internals.hasPropertyByName(describe.rules, &#x27;integer&#x27;)) {
+        property.type = &#x27;integer&#x27;;
+    }
+
+    // add extended properties not part of openAPI spec
+    if (this.settings.xProperties === true) {
+        internals.convertRules(property, describe.rules, [
+            &#x27;greater&#x27;,
+            &#x27;less&#x27;,
+            &#x27;precision&#x27;,
+            &#x27;multiple&#x27;,
+            &#x27;positive&#x27;,
+            &#x27;negative&#x27;
+        ], &#x27;x-constraint&#x27;);
+    }
+
+    return property;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// add number properties
+if (property.type === &#x27;string&#x27;) {
+    property = this.parseString(property, joiObj);
+}
+
+// add number properties
+if (property.type === &#x27;number&#x27;) {
+    property = this.<span class="apidocCodeKeywordSpan">parseNumber</span>(property, joiObj);
+}
+
+// add date properties
+if (property.type === &#x27;string&#x27; &#x26;&#x26; property.format === &#x27;date&#x27;) {
+    property = this.parseDate(property, joiObj);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.properties.prototype.parseObject" id="apidoc.element.hapi-swagger.properties.prototype.parseObject">
+        function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parseObject
+        <span class="apidocSignatureSpan">(property, joiObj, name, parameterType, useDefinitions, isAlt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseObject = function (property, joiObj, name, parameterType, useDefinitions, isAlt) {
+
+    property.properties = {};
+    joiObj = joiObj._inner.children;
+    joiObj.forEach((obj) =&#x3e; {
+
+        let keyName = obj.key;
+        let itemName = obj.key;
+        let joiChildObj = obj.schema;
+        // get name form label if set
+        if (Utilities.geJoiLabel(joiChildObj)) {
+            itemName = Utilities.geJoiLabel(joiChildObj);
+        }
+        //name, joiObj, parent, parameterType, useDefinitions, isAlt
+        property.properties[keyName] = this.parseProperty(itemName, joiChildObj, property, parameterType, useDefinitions, isAlt);
+        // switch references if naming has changed
+        if (keyName !== itemName) {
+            property.required = Utilities.replaceValue(property.required, itemName, keyName);
+            property.optional = Utilities.replaceValue(property.optional, itemName, keyName);
+        }
+    });
+    property.name = name;
+    return property;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        property = this.parseDate(property, joiObj);
+    }
+
+    // add object child properties
+    if (property.type === &#x27;object&#x27;) {
+        if (Utilities.hasJoiChildren(joiObj)) {
+
+property = this.<span class="apidocCodeKeywordSpan">parseObject</span>(property, joiObj, name, parameterType, useDefinitions, isAlt
+);
+if (useDefinitions === true) {
+    let refName = this.definitions.append(name, property, this.getDefinitionCollection(isAlt), this.settings);
+    property = {
+        &#x27;$ref&#x27;: this.getDefinitionRef(isAlt) + refName,
+        &#x27;type&#x27;: &#x27;object&#x27;
+    };
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.properties.prototype.parseProperty" id="apidoc.element.hapi-swagger.properties.prototype.parseProperty">
+        function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parseProperty
+        <span class="apidocSignatureSpan">(name, joiObj, parent, parameterType, useDefinitions, isAlt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseProperty = function (name, joiObj, parent, parameterType, useDefinitions, isAlt) {
+
+    let property = { type: &#x27;void&#x27; };
+
+    // if wrong format or forbidden - return undefined
+    if (!Utilities.isJoi(joiObj)) {
+        return undefined;
+    }
+    if (Hoek.reach(joiObj, &#x27;_flags.presence&#x27;) === &#x27;forbidden&#x27;) {
+        return undefined;
+    }
+
+    // default the use of definitions to true
+    if (useDefinitions === undefined || useDefinitions === null) {
+        useDefinitions = true;
+    }
+
+    // get name from joi label if its not a path
+    if (!name &#x26;&#x26; Utilities.geJoiLabel(joiObj) &#x26;&#x26; parameterType !== &#x27;path&#x27;) {
+        name = Utilities.geJoiLabel(joiObj);
+    }
+
+    // add correct type and format by mapping
+    let joiType = joiObj._type.toLowerCase();
+    // for Joi extension, use the any type
+    if (!(joiType in this.propertyMap)){
+        joiType = &#x27;any&#x27;;
+    }
+    let map = this.propertyMap[joiType];
+    property.type = map.type;
+    if (map.format) {
+        property.format = map.format;
+    }
+
+    // Joi object caching - speeds up parsing
+    let joiCache;
+    if (useDefinitions &#x26;&#x26; Array.isArray(this.definitionCache) &#x26;&#x26; property.type === &#x27;object&#x27;) {
+        // select WeakMap for current definition collection
+        joiCache = (isAlt === true) ? this.definitionCache[1] : this.definitionCache[0];
+        if (joiCache.has(joiObj)) {
+            return joiCache.get(joiObj);
+        }
+    }
+
+
+    property = this.parsePropertyMetadata(property, name, parent, joiObj);
+
+    // add enum
+    let describe = joiObj.describe();
+    if (Array.isArray(describe.valids) &#x26;&#x26; describe.valids.length) {
+        // fliter out empty values and arrays
+        var enums = describe.valids.filter((item) =&#x3e; {
+
+            return item !== &#x27;&#x27; &#x26;&#x26; item !== null;
+        });
+        if (enums.length &#x3e; 0) {
+            property.enum = enums;
+        }
+    }
+
+    // add number properties
+    if (property.type === &#x27;string&#x27;) {
+        property = this.parseString(property, joiObj);
+    }
+
+    // add number properties
+    if (property.type === &#x27;number&#x27;) {
+        property = this.parseNumber(property, joiObj);
+    }
+
+    // add date properties
+    if (property.type === &#x27;string&#x27; &#x26;&#x26; property.format === &#x27;date&#x27;) {
+        property = this.parseDate(property, joiObj);
+    }
+
+    // add object child properties
+    if (property.type === &#x27;object&#x27;) {
+        if (Utilities.hasJoiChildren(joiObj)) {
+
+            property = this.parseObject(property, joiObj, name, parameterType, useDefinitions, isAlt);
+            if (useDefinitions === true) {
+                let refName = this.definitions.append(name, property, this.getDefinitionCollection(isAlt), this.settings);
+                property = {
+                    &#x27;$ref&#x27;: this.getDefinitionRef(isAlt) + refName,
+                    &#x27;type&#x27;: &#x27;object&#x27;
+                };
+            }
+
+        } else {
+            // default empty object
+            property.properties = {};
+            if (useDefinitions === true) {
+                let objectSchema = { &#x27;type&#x27;: &#x27;object&#x27;, &#x27;properties&#x27;: {} };
+                let refName = this.definitions.append(name, objectSchema, this.getDefinitionCollection(isAlt), this.settings);
+                property = {
+                    &#x27;$ref&#x27;: this.getDefinitionRef(isAlt) + refName,
+                    &#x27;type&#x27;: &#x27;object&#x27;
+                };
+            }
+
+        }
+    }
+
+
+    // add array properties
+    if (property.type === &#x27;array&#x27;) {
+        property = this.parseArray(property, joiObj, name, parameterType, useDefinitions, isAlt);
+
+        if (useDefinitions === true) {
+            let refName = this.definitions.append(name, property, this.getDefinitionCollection(isAlt), this.settings);
+            property = {
+                &#x27;$ref&#x27;: this.getDefinitionRef(isAlt) + refName,
+                &#x27;type&#x27;: &#x27;array&#x27;
+            };
+        }
+    }
+
+
+    // add alternatives properties
+    if (property.type === &#x27;alternatives&#x27;) {
+        property = this.parseAlternatives(property, joiObj, name, parameterType, useDefinitions);
+    }
+
+    // convert property to file upload, if indicated by meta property
+    if (Utilities. ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+internals.paths.prototype.getSwaggerStructures = function (joiObj, parameterType, useDefinitions, isAlt) {
+
+let outProperties;
+let outParameters;
+
+if (joiObj) {
+    // name, joiObj, parent, parameterType, useDefinitions, isAlt
+    outProperties = this.properties.<span class="apidocCodeKeywordSpan">parseProperty</span>(null, joiObj, null, parameterType,
+useDefinitions, isAlt);
+    outParameters = Parameters.fromProperties(outProperties, parameterType);
+}
+let out = {
+    properties: outProperties || {},
+    parameters: outParameters || []
+};
+return out;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.properties.prototype.parsePropertyMetadata" id="apidoc.element.hapi-swagger.properties.prototype.parsePropertyMetadata">
+        function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parsePropertyMetadata
+        <span class="apidocSignatureSpan">(property, name, parent, joiObj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parsePropertyMetadata = function (property, name, parent, joiObj) {
+
+    const describe = joiObj.describe();
+
+    // add common properties
+    property.description = Hoek.reach(joiObj, &#x27;_description&#x27;);
+    property.notes = Hoek.reach(joiObj, &#x27;_notes&#x27;);
+    property.tags = Hoek.reach(joiObj, &#x27;_tags&#x27;);
+
+    // add extended properties not part of openAPI spec
+    if (this.settings.xProperties === true) {
+        internals.convertRules(property, describe.rules, [
+            &#x27;unit&#x27;
+        ], &#x27;x-format&#x27;);
+        property.example = Hoek.reach(joiObj, &#x27;_examples.0&#x27;);
+        property[&#x27;x-meta&#x27;] = Hoek.reach(joiObj, &#x27;_meta.0&#x27;);
+    }
+
+    // add required/optional state only if present
+    if (parent &#x26;&#x26; name) {
+        if (Hoek.reach(joiObj, &#x27;_flags.presence&#x27;)) {
+            if (parent.required === undefined) {
+                parent.required = [];
+            }
+            if (parent.optional === undefined) {
+                parent.optional = [];
+            }
+            if (Hoek.reach(joiObj, &#x27;_flags.presence&#x27;) === &#x27;required&#x27;) {
+                parent.required.push(name);
+            }
+            if (Hoek.reach(joiObj, &#x27;_flags.presence&#x27;) === &#x27;optional&#x27;) {
+                parent.optional.push(name);
+            }
+        }
+    }
+
+    property.default = Hoek.reach(joiObj, &#x27;_flags.default&#x27;);
+
+    // allow for function calls
+    if (Utilities.isFunction(property.default)) {
+        property.default = property.default();
+    }
+
+    return property;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    joiCache = (isAlt === true) ? this.definitionCache[1] : this.definitionCache[0];
+    if (joiCache.has(joiObj)) {
+        return joiCache.get(joiObj);
+    }
+}
+
+
+property = this.<span class="apidocCodeKeywordSpan">parsePropertyMetadata</span>(property, name, parent, joiObj);
+
+// add enum
+let describe = joiObj.describe();
+if (Array.isArray(describe.valids) &#x26;&#x26; describe.valids.length) {
+    // fliter out empty values and arrays
+    var enums = describe.valids.filter((item) =&#x3e; {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.properties.prototype.parseString" id="apidoc.element.hapi-swagger.properties.prototype.parseString">
+        function <span class="apidocSignatureSpan">hapi-swagger.properties.prototype.</span>parseString
+        <span class="apidocSignatureSpan">(property, joiObj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseString = function (property, joiObj) {
+
+    const describe = joiObj.describe();
+
+    property.minLength = internals.getArgByName(describe.rules, &#x27;min&#x27;);
+    property.maxLength = internals.getArgByName(describe.rules, &#x27;max&#x27;);
+
+    // add regex
+    joiObj._tests.forEach((test) =&#x3e; {
+        // Joi post v10
+        if (Utilities.isObject(test.arg) &#x26;&#x26; test.arg.pattern) {
+            property.pattern = test.arg.pattern.toString();
+        }
+        // Joi pre v10
+<span class="apidocCodeCommentSpan">        /* $lab:coverage:off$ */
+</span>        if (Utilities.isRegex(test.arg)) {
+            property.pattern = test.arg.toString();
+        }
+        /* $lab:coverage:on$ */
+    });
+
+
+    // add extended properties not part of openAPI spec
+    if (this.settings.xProperties === true) {
+        internals.convertRules(property, describe.rules, [
+            &#x27;insensitive&#x27;,
+            &#x27;length&#x27;
+        ], &#x27;x-constraint&#x27;);
+
+        internals.convertRules(property, describe.rules, [
+            &#x27;creditCard&#x27;,
+            &#x27;alphanum&#x27;,
+            &#x27;token&#x27;,
+            &#x27;email&#x27;,
+            &#x27;ip&#x27;,
+            &#x27;uri&#x27;,
+            &#x27;guid&#x27;,
+            &#x27;hex&#x27;,
+            &#x27;hostname&#x27;,
+            &#x27;isoDate&#x27;
+        ], &#x27;x-format&#x27;);
+
+        internals.convertRules(property, describe.rules, [
+            &#x27;lowercase&#x27;,
+            &#x27;uppercase&#x27;,
+            &#x27;trim&#x27;
+        ], &#x27;x-convert&#x27;);
+    }
+
+    return property;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (enums.length &#x3e; 0) {
+        property.enum = enums;
+    }
+}
+
+// add number properties
+if (property.type === &#x27;string&#x27;) {
+    property = this.<span class="apidocCodeKeywordSpan">parseString</span>(property, joiObj);
+}
+
+// add number properties
+if (property.type === &#x27;number&#x27;) {
+    property = this.parseNumber(property, joiObj);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.responses" id="apidoc.module.hapi-swagger.responses">module hapi-swagger.responses</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.responses.responses" id="apidoc.element.hapi-swagger.responses.responses">
+        function <span class="apidocSignatureSpan">hapi-swagger.</span>responses
+        <span class="apidocSignatureSpan">(settings, definitionCollection, altDefinitionCollection, definitionCache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">responses = function (settings, definitionCollection, altDefinitionCollection, definitionCache) {
+
+    this.settings = settings;
+    this.definitionCollection = definitionCollection;
+    this.altDefinitionCollection = altDefinitionCollection;
+
+    this.definitions = new Definitions(settings);
+    this.properties = new Properties(settings, this.definitionCollection, this.altDefinitionCollection, definitionCache);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.responses.prototype" id="apidoc.module.hapi-swagger.responses.prototype">module hapi-swagger.responses.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.responses.prototype.build" id="apidoc.element.hapi-swagger.responses.prototype.build">
+        function <span class="apidocSignatureSpan">hapi-swagger.responses.prototype.</span>build
+        <span class="apidocSignatureSpan">(userDefindedSchemas, defaultSchema, statusSchemas, useDefinitions, isAlt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">build = function (userDefindedSchemas, defaultSchema, statusSchemas, useDefinitions, isAlt) {
+
+    let out = {};
+
+
+    // add defaultSchema to statusSchemas if needed
+    if (Utilities.hasProperties(defaultSchema) &#x26;&#x26; (Hoek.reach(statusSchemas, &#x27;200&#x27;) === undefined)) {
+        statusSchemas[200] = defaultSchema;
+    }
+
+    // loop for each status and convert schema into a definition
+    if (Utilities.hasProperties(statusSchemas)) {
+        for (let key in statusSchemas) {
+            // name, joiObj, parameterType, useDefinitions, isAlt
+            let response = this.getResponse(key, statusSchemas[key], null, useDefinitions, isAlt);
+            out[key] = response;
+        }
+    }
+
+    // use plug-in options overrides to enchance hapi objects and properties
+    if (Utilities.hasProperties(userDefindedSchemas) === true) {
+        out = this.optionOverride(out, userDefindedSchemas, useDefinitions, isAlt);
+    }
+
+    // make sure 200 status always has a schema #237
+    if (out[200] &#x26;&#x26; out[200].schema === undefined) {
+        out[200].schema = {
+            &#x27;type&#x27;: &#x27;string&#x27;
+        };
+    }
+
+    // make sure there is a default if no other responses are found
+    if (Utilities.hasProperties(out) === false) {
+        out.default = {
+            &#x27;schema&#x27;: {
+                &#x27;type&#x27;: &#x27;string&#x27;
+            },
+            &#x27;description&#x27;: &#x27;Successful&#x27;
+        };
+    }
+
+    return Utilities.deleteEmptyProperties(out);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (settings.basePath !== &#x27;/&#x27;) {
+    settings.basePath = Utilities.removeTrailingSlash(settings.basePath);
+}
+let out = internals.removeNoneSchemaOptions(settings);
+Joi.assert(out, builder.schema);
+
+
+out.info = Info.<span class="apidocCodeKeywordSpan">build</span>(settings);
+out.tags = Tags.build(settings);
+
+let routes = connection.table();
+
+routes = Filter.byTags([&#x27;api&#x27;], routes);
+Sort.paths(settings.sortPaths, routes);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.responses.prototype.getResponse" id="apidoc.element.hapi-swagger.responses.prototype.getResponse">
+        function <span class="apidocSignatureSpan">hapi-swagger.responses.prototype.</span>getResponse
+        <span class="apidocSignatureSpan">(statusCode, joiObj, useDefinitions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getResponse = function (statusCode, joiObj, useDefinitions) {
+
+    let out;
+    //name, joiObj, parent, parameterType, useDefinitions, isAlt
+    let outProperties = this.properties.parseProperty(null, joiObj, null, &#x27;body&#x27;, useDefinitions, false);
+    out = {
+        &#x27;description&#x27;: Hoek.reach(joiObj, &#x27;_description&#x27;),
+        &#x27;schema&#x27;: outProperties
+    };
+
+    out.headers = Utilities.getJoiMetaProperty(joiObj, &#x27;headers&#x27;);
+    out.examples = Utilities.getJoiMetaProperty(joiObj, &#x27;examples&#x27;);
+    delete out.schema[&#x27;x-meta&#x27;];
+    out = Utilities.deleteEmptyProperties(out);
+
+    // default description if not given
+    if (!out.description) {
+        out.description = HTTPStatus[statusCode].replace(&#x27;OK&#x27;, &#x27;Successful&#x27;);
+    }
+
+    return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    statusSchemas[200] = defaultSchema;
+}
+
+// loop for each status and convert schema into a definition
+if (Utilities.hasProperties(statusSchemas)) {
+    for (let key in statusSchemas) {
+        // name, joiObj, parameterType, useDefinitions, isAlt
+        let response = this.<span class="apidocCodeKeywordSpan">getResponse</span>(key, statusSchemas[key], null, useDefinitions
+, isAlt);
+        out[key] = response;
+    }
+}
+
+// use plug-in options overrides to enchance hapi objects and properties
+if (Utilities.hasProperties(userDefindedSchemas) === true) {
+    out = this.optionOverride(out, userDefindedSchemas, useDefinitions, isAlt);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.responses.prototype.optionOverride" id="apidoc.element.hapi-swagger.responses.prototype.optionOverride">
+        function <span class="apidocSignatureSpan">hapi-swagger.responses.prototype.</span>optionOverride
+        <span class="apidocSignatureSpan">(discoveredSchemas, userDefindedSchemas, useDefinitions, isAlt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">optionOverride = function (discoveredSchemas, userDefindedSchemas, useDefinitions, isAlt) {
+
+    for (let key in userDefindedSchemas) {
+
+        // create a new object by cloning - dont modify user definded objects
+        let out = Hoek.clone(userDefindedSchemas[key]);
+
+        // test for any JOI objects
+        if (Hoek.reach(userDefindedSchemas[key], &#x27;schema.isJoi&#x27;) &#x26;&#x26; userDefindedSchemas[key].schema.isJoi === true) {
+            out = this.getResponse(key, userDefindedSchemas[key].schema, useDefinitions, isAlt);
+            out.description = userDefindedSchemas[key].description;
+        }
+
+
+        // overwrite discovery with user definded
+        if (!discoveredSchemas[key] &#x26;&#x26; out) {
+            // if it does not exist create it
+            discoveredSchemas[key] = out;
+        } else {
+            // add description to schema
+            if (out.description) {
+                discoveredSchemas[key].description = out.description;
+            }
+            // overwrite schema
+            if (out.schema) {
+                discoveredSchemas[key].schema = out.schema;
+            }
+        }
+        discoveredSchemas[key] = Utilities.deleteEmptyProperties(discoveredSchemas[key]);
+
+    }
+    return discoveredSchemas;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        let response = this.getResponse(key, statusSchemas[key], null, useDefinitions, isAlt);
+        out[key] = response;
+    }
+}
+
+// use plug-in options overrides to enchance hapi objects and properties
+if (Utilities.hasProperties(userDefindedSchemas) === true) {
+    out = this.<span class="apidocCodeKeywordSpan">optionOverride</span>(out, userDefindedSchemas, useDefinitions, isAlt);
+}
+
+// make sure 200 status always has a schema #237
+if (out[200] &#x26;&#x26; out[200].schema === undefined) {
+    out[200].schema = {
+        &#x27;type&#x27;: &#x27;string&#x27;
+    };
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.sort" id="apidoc.module.hapi-swagger.sort">module hapi-swagger.sort</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.sort.paths" id="apidoc.element.hapi-swagger.sort.paths">
+        function <span class="apidocSignatureSpan">hapi-swagger.sort.</span>paths
+        <span class="apidocSignatureSpan">(sortType, routes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">paths = function (sortType, routes) {
+
+
+    if (sortType === &#x27;path-method&#x27;) {
+        //console.log(&#x27;path-method&#x27;)
+        routes.sort(
+            Utilities.firstBy(&#x27;path&#x27;).thenBy(&#x27;method&#x27;)
+        );
+    }
+
+    return routes;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+out.info = Info.build(settings);
+out.tags = Tags.build(settings);
+
+let routes = connection.table();
+
+routes = Filter.byTags([&#x27;api&#x27;], routes);
+Sort.<span class="apidocCodeKeywordSpan">paths</span>(settings.sortPaths, routes);
+
+// filter routes displayed based on tags passed in query string
+if (request.query.tags) {
+    let filterTags = request.query.tags.split(&#x27;,&#x27;);
+    routes = Filter.byTags(filterTags, routes);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.tags" id="apidoc.module.hapi-swagger.tags">module hapi-swagger.tags</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.tags.build" id="apidoc.element.hapi-swagger.tags.build">
+        function <span class="apidocSignatureSpan">hapi-swagger.tags.</span>build
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">build = function (settings) {
+
+    let out = [];
+
+    if (settings.tags) {
+        Joi.assert(settings.tags, tags.schema);
+        out = settings.tags;
+    }
+    return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (settings.basePath !== &#x27;/&#x27;) {
+    settings.basePath = Utilities.removeTrailingSlash(settings.basePath);
+}
+let out = internals.removeNoneSchemaOptions(settings);
+Joi.assert(out, builder.schema);
+
+
+out.info = Info.<span class="apidocCodeKeywordSpan">build</span>(settings);
+out.tags = Tags.build(settings);
+
+let routes = connection.table();
+
+routes = Filter.byTags([&#x27;api&#x27;], routes);
+Sort.paths(settings.sortPaths, routes);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.utilities" id="apidoc.module.hapi-swagger.utilities">module hapi-swagger.utilities</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.createId" id="apidoc.element.hapi-swagger.utilities.createId">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>createId
+        <span class="apidocSignatureSpan">(method, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createId = function (method, path) {
+
+    const self = this;
+    if (path.indexOf(&#x27;/&#x27;) &#x3e; -1) {
+        let items = path.split(&#x27;/&#x27;);
+        items = items.map(function (item) {
+            // replace chars such as &#x27;{&#x27;
+            item = item.replace(/[^\w\s]/gi, &#x27;&#x27;);
+            return self.toTitleCase(item);
+        });
+        path = items.join(&#x27;&#x27;);
+    } else {
+        path = self.toTitleCase(path);
+    }
+    return method.toLowerCase() + path;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    routes.forEach((route) =&#x3e; {
+
+let method = route.method;
+let path = internals.removeBasePath(route.path, this.settings.basePath, this.settings.pathReplacements);
+let out = {
+    &#x27;summary&#x27;: route.description,
+    &#x27;operationId&#x27;: route.id || Utilities.<span class="apidocCodeKeywordSpan">createId</span>(route.method, path),
+    &#x27;description&#x27;: route.notes,
+    &#x27;parameters&#x27;: [],
+    &#x27;consumes&#x27;: [],
+    &#x27;produces&#x27;: []
+};
+
+// tags in swagger are used for grouping
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.deleteEmptyProperties" id="apidoc.element.hapi-swagger.utilities.deleteEmptyProperties">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>deleteEmptyProperties
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteEmptyProperties = function (obj) {
+
+    let key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            // delete properties undefined values
+            if (obj[key] === undefined || obj[key] === null) {
+                delete obj[key];
+            }
+            // allow blank objects for example or default properties
+            if ([&#x27;default&#x27;, &#x27;example&#x27;].indexOf(key) === -1) {
+                // delete array with no values
+                if (Array.isArray(obj[key]) &#x26;&#x26; obj[key].length === 0) {
+                    delete obj[key];
+                }
+                // delete object which does not have its own properties
+                if (utilities.isObject(obj[key]) &#x26;&#x26; utilities.hasProperties(obj[key]) === false) {
+                    delete obj[key];
+                }
+            }
+        }
+    }
+    return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // add $ref directly to parent and delete schema
+//    if (obj.schema) {
+//        obj.$ref = obj.schema.$ref;
+//        delete obj.schema;
+//    }
+
+    // remove emtpy properties
+    obj = Utilities.<span class="apidocCodeKeywordSpan">deleteEmptyProperties</span>(obj);
+
+    // remove unneeded properties
+    delete obj.name;
+
+    return obj;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.findAndRenameKey" id="apidoc.element.hapi-swagger.utilities.findAndRenameKey">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>findAndRenameKey
+        <span class="apidocSignatureSpan">(obj, findKey, replaceKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findAndRenameKey = function (obj, findKey, replaceKey) {
+
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            if (typeof obj[key] === &#x27;object&#x27;) {
+                this.findAndRenameKey(obj[key], findKey, replaceKey);
+            }
+            if (key === findKey) {
+                if (replaceKey) {
+                    obj[replaceKey] = obj[findKey];
+                }
+                delete obj[findKey];
+            }
+        }
+    }
+    return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @return {Object}
+ */
+utilities.findAndRenameKey = function (obj, findKey, replaceKey) {
+
+for (var key in obj) {
+    if (obj.hasOwnProperty(key)) {
+        if (typeof obj[key] === &#x27;object&#x27;) {
+            this.<span class="apidocCodeKeywordSpan">findAndRenameKey</span>(obj[key], findKey, replaceKey);
+        }
+        if (key === findKey) {
+            if (replaceKey) {
+                obj[replaceKey] = obj[findKey];
+            }
+            delete obj[findKey];
+        }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.first" id="apidoc.element.hapi-swagger.utilities.first">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>first
+        <span class="apidocSignatureSpan">(array)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">first = function (array) {
+
+    return Array.isArray(array) ? array[0] : undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// set swaggers collectionFormat to one that works with hapi
+if (parameterType === &#x27;query&#x27; || parameterType === &#x27;formData&#x27;) {
+    property.collectionFormat = &#x27;multi&#x27;;
+}
+
+// swagger appears to only support one array item type at a time, so grab the first one
+let arrayItemTypes = joiObj._inner.items; // joiObj._inner.inclusions;
+let arrayItem = Utilities.<span class="apidocCodeKeywordSpan">first</span>(arrayItemTypes);
+
+if (arrayItem) {
+    // get name of item if it has one
+    let itemName;
+    if (Utilities.geJoiLabel(arrayItem)) {
+        itemName = Utilities.geJoiLabel(arrayItem);
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.firstBy" id="apidoc.element.hapi-swagger.utilities.firstBy">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>firstBy
+        <span class="apidocSignatureSpan">(f, d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">firstBy = function (f, d) {
+
+    f = makeCompareFunction(f, d);
+    f.thenBy = tb;
+    return f;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+sort.paths = function (sortType, routes) {
+
+
+    if (sortType === &#x27;path-method&#x27;) {
+        //console.log(&#x27;path-method&#x27;)
+        routes.sort(
+            Utilities.<span class="apidocCodeKeywordSpan">firstBy</span>(&#x27;path&#x27;).thenBy(&#x27;method&#x27;)
+        );
+    }
+
+    return routes;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.geJoiLabel" id="apidoc.element.hapi-swagger.utilities.geJoiLabel">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>geJoiLabel
+        <span class="apidocSignatureSpan">(joiObj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">geJoiLabel = function (joiObj) {
+
+    // old version
+<span class="apidocCodeCommentSpan">    /* $lab:coverage:off$ */
+</span>    if (Hoek.reach(joiObj, &#x27;_settings.language.label&#x27;)) {
+        return Hoek.reach(joiObj, &#x27;_settings.language.label&#x27;);
+    }
+    /* $lab:coverage:on$ */
+    // Joi &#x3e; 10.9
+    if (Hoek.reach(joiObj, &#x27;_flags.label&#x27;)) {
+        return Hoek.reach(joiObj, &#x27;_flags.label&#x27;);
+    }
+
+    return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// default the use of definitions to true
+if (useDefinitions === undefined || useDefinitions === null) {
+    useDefinitions = true;
+}
+
+// get name from joi label if its not a path
+if (!name &#x26;&#x26; Utilities.<span class="apidocCodeKeywordSpan">geJoiLabel</span>(joiObj) &#x26;&#x26; parameterType !== &#
+x27;path&#x27;) {
+    name = Utilities.geJoiLabel(joiObj);
+}
+
+// add correct type and format by mapping
+let joiType = joiObj._type.toLowerCase();
+// for Joi extension, use the any type
+if (!(joiType in this.propertyMap)){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.getJoiMetaProperty" id="apidoc.element.hapi-swagger.utilities.getJoiMetaProperty">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>getJoiMetaProperty
+        <span class="apidocSignatureSpan">(joiObj, propertyName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getJoiMetaProperty = function (joiObj, propertyName) {
+
+    // get headers added using meta function
+    if (utilities.isJoi(joiObj) &#x26;&#x26; utilities.hasJoiMeta(joiObj)) {
+
+        const meta = joiObj._meta;
+        let i = meta.length;
+        while (i--) {
+            if (meta[i][propertyName]) {
+                return meta[i][propertyName];
+            }
+        }
+    }
+    return undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// add alternatives properties
+if (property.type === &#x27;alternatives&#x27;) {
+    property = this.parseAlternatives(property, joiObj, name, parameterType, useDefinitions);
+}
+
+// convert property to file upload, if indicated by meta property
+if (Utilities.<span class="apidocCodeKeywordSpan">getJoiMetaProperty</span>(joiObj, &#x27;swaggerType&#x27;) === &#x27;file&#x27
+;) {
+    property.type = &#x27;file&#x27;;
+    property.in = &#x27;formData&#x27;;
+}
+
+property = Utilities.deleteEmptyProperties(property);
+if (joiCache &#x26;&#x26; property.$ref) {
+    joiCache.set(joiObj, property);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.hasJoiChildren" id="apidoc.element.hapi-swagger.utilities.hasJoiChildren">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>hasJoiChildren
+        <span class="apidocSignatureSpan">(joiObj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasJoiChildren = function (joiObj) {
+
+    return (utilities.isJoi(joiObj) &#x26;&#x26; Hoek.reach(joiObj, &#x27;_inner.children&#x27;)) ? true : false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+let payloadStructures = this.getDefaultStructures();
+let payloadJoi = internals.getJOIObj(route, &#x27;payloadParams&#x27;);
+if (payloadType.toLowerCase() === &#x27;json&#x27;) {
+    // set as json
+    payloadStructures = this.getSwaggerStructures(payloadJoi, &#x27;body&#x27;, true, false);
+} else {
+    // set as formData
+    if (Utilities.<span class="apidocCodeKeywordSpan">hasJoiChildren</span>(payloadJoi)) {
+        payloadStructures = this.getSwaggerStructures(payloadJoi, &#x27;formData&#x27;, false, false);
+    } else {
+        self.testParameterError(payloadJoi, &#x27;payload form-urlencoded&#x27;, path);
+    }
+    // add form data mimetype
+    out.consumes = [&#x27;application/x-www-form-urlencoded&#x27;];
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.hasJoiMeta" id="apidoc.element.hapi-swagger.utilities.hasJoiMeta">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>hasJoiMeta
+        <span class="apidocSignatureSpan">(joiObj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasJoiMeta = function (joiObj) {
+
+    return (utilities.isJoi(joiObj) &#x26;&#x26; Array.isArray(joiObj._meta)) ? true : false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param  {Object} joiObj
+ * @param  {String} propertyName
+ * @return {Object || Undefined}
+ */
+utilities.getJoiMetaProperty = function (joiObj, propertyName) {
+
+    // get headers added using meta function
+    if (utilities.isJoi(joiObj) &#x26;&#x26; utilities.<span class="apidocCodeKeywordSpan">hasJoiMeta</span>(joiObj)) {
+
+const meta = joiObj._meta;
+let i = meta.length;
+while (i--) {
+    if (meta[i][propertyName]) {
+        return meta[i][propertyName];
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.hasKey" id="apidoc.element.hapi-swagger.utilities.hasKey">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>hasKey
+        <span class="apidocSignatureSpan">(obj, findKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasKey = function (obj, findKey) {
+
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            if (typeof obj[key] === &#x27;object&#x27;) {
+                if (this.hasKey(obj[key], findKey) === true) {
+
+                    return true;
+                }
+            }
+            if (key === findKey) {
+                return true;
+            }
+        }
+    }
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @return {Boolean}
+ */
+utilities.hasKey = function (obj, findKey) {
+
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+if (typeof obj[key] === &#x27;object&#x27;) {
+    if (this.<span class="apidocCodeKeywordSpan">hasKey</span>(obj[key], findKey) === true) {
+
+        return true;
+    }
+}
+if (key === findKey) {
+    return true;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.hasProperties" id="apidoc.element.hapi-swagger.utilities.hasProperties">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>hasProperties
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasProperties = function (obj) {
+
+    let key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            return true;
+        }
+    }
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// append group property - by path
+Group.appendGroupByPath(settings.pathPrefixSize, settings.basePath, routes, settings.pathReplacements);
+
+let paths = new Paths(settings);
+let pathData = paths.build(routes);
+out.paths = pathData.paths;
+out.definitions = pathData.definitions;
+if (Utilities.<span class="apidocCodeKeywordSpan">hasProperties</span>(pathData[&#x27;x-alt-definitions&#x27;])) {
+    out[&#x27;x-alt-definitions&#x27;] = pathData[&#x27;x-alt-definitions&#x27;];
+}
+out = internals.removeNoneSchemaOptions(out);
+
+if (settings.debug) {
+    Validate.log(out, settings.log);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.isFunction" id="apidoc.element.hapi-swagger.utilities.isFunction">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>isFunction
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isFunction = function (obj) {
+
+    // remove `obj.constructor` test as it was always true
+    return !!(obj &#x26;&#x26; obj.call &#x26;&#x26; obj.apply);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&#x27;queryParams&#x27;,
+&#x27;pathParams&#x27;,
+&#x27;headerParams&#x27;,
+&#x27;payloadParams&#x27;
+        ].forEach(function (property) {
+
+// swap out any custom validation function for Joi object/string
+if (Utilities.<span class="apidocCodeKeywordSpan">isFunction</span>(routeData[property])) {
+    if (property !== &#x27;pathParams&#x27;) {
+        self.settings.log([&#x27;vaildation&#x27;, &#x27;warning&#x27;], &#x27;Using a Joi.function for a query, header or payload
+ is not supported.&#x27;);
+        if (property === &#x27;payloadParams&#x27;) {
+            routeData[property] = Joi.object().label(&#x27;Hidden Model&#x27;);
+        } else {
+            routeData[property] = Joi.object({ &#x27;Hidden Model&#x27;: Joi.string() });
+        }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.isJoi" id="apidoc.element.hapi-swagger.utilities.isJoi">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>isJoi
+        <span class="apidocSignatureSpan">(joiObj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isJoi = function (joiObj) {
+
+    return (joiObj &#x26;&#x26; joiObj.isJoi) ? true : false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @return {Object}
+ */
+internals.properties.prototype.parseProperty = function (name, joiObj, parent, parameterType, useDefinitions, isAlt) {
+
+let property = { type: &#x27;void&#x27; };
+
+// if wrong format or forbidden - return undefined
+if (!Utilities.<span class="apidocCodeKeywordSpan">isJoi</span>(joiObj)) {
+    return undefined;
+}
+if (Hoek.reach(joiObj, &#x27;_flags.presence&#x27;) === &#x27;forbidden&#x27;) {
+    return undefined;
+}
+
+// default the use of definitions to true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.isObject" id="apidoc.element.hapi-swagger.utilities.isObject">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>isObject
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isObject = function (obj) {
+
+    return obj !== null &#x26;&#x26; obj !== undefined &#x26;&#x26; typeof obj === &#x27;object&#x27; &#x26;&#x26; !Array.isArray(obj);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+property.minLength = internals.getArgByName(describe.rules, &#x27;min&#x27;);
+property.maxLength = internals.getArgByName(describe.rules, &#x27;max&#x27;);
+
+// add regex
+joiObj._tests.forEach((test) =&#x3e; {
+    // Joi post v10
+    if (Utilities.<span class="apidocCodeKeywordSpan">isObject</span>(test.arg) &#x26;&#x26; test.arg.pattern) {
+        property.pattern = test.arg.pattern.toString();
+    }
+    // Joi pre v10
+    /* $lab:coverage:off$ */
+    if (Utilities.isRegex(test.arg)) {
+        property.pattern = test.arg.toString();
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.isRegex" id="apidoc.element.hapi-swagger.utilities.isRegex">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>isRegex
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isRegex = function (obj) {
+
+    // base on https://github.com/ljharb/is-regex/
+    // has a couple of edge use cases for different env  - hence coverage:off
+<span class="apidocCodeCommentSpan">    /* $lab:coverage:off$ */
+</span>    const regexExec = RegExp.prototype.exec;
+    const tryRegexExec = function tryRegexExec (value) {
+
+        try {
+            regexExec.call(value);
+            return true;
+        } catch (e) {
+            return false;
+        }
+    };
+    const toStr = Object.prototype.toString;
+    const regexClass = &#x27;[object RegExp]&#x27;;
+    const hasToStringTag = typeof Symbol === &#x27;function&#x27; &#x26;&#x26; typeof Symbol.toStringTag === &#x27;symbol&#x27;;
+
+    if (typeof obj !== &#x27;object&#x27;) {
+        return false;
+    }
+    return hasToStringTag ? tryRegexExec(obj) : toStr.call(obj) === regexClass;
+    /* $lab:coverage:on$ */
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+joiObj._tests.forEach((test) =&#x3e; {
+    // Joi post v10
+    if (Utilities.isObject(test.arg) &#x26;&#x26; test.arg.pattern) {
+        property.pattern = test.arg.pattern.toString();
+    }
+    // Joi pre v10
+    /* $lab:coverage:off$ */
+    if (Utilities.<span class="apidocCodeKeywordSpan">isRegex</span>(test.arg)) {
+        property.pattern = test.arg.toString();
+    }
+    /* $lab:coverage:on$ */
+});
+
+
+// add extended properties not part of openAPI spec
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.removeProps" id="apidoc.element.hapi-swagger.utilities.removeProps">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>removeProps
+        <span class="apidocSignatureSpan">(obj, listOfProps)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeProps = function (obj, listOfProps) {
+
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            if (listOfProps.indexOf(key) === -1 &#x26;&#x26; this.startsWith(key, &#x27;x-&#x27;) === false) {
+                delete obj[key];
+                //console.log(&#x27;Removed property: &#x27; + key + &#x27; from object: &#x27;, JSON.stringify(obj));
+            }
+        }
+    }
+    return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    // reinstate x-alternatives at parameter level
+    if (schemaObj[&#x27;x-alternatives&#x27;]) {
+        item[&#x27;x-alternatives&#x27;] = schemaObj[&#x27;x-alternatives&#x27;];
+        delete item.schema[&#x27;x-alternatives&#x27;];
+    }
+
+    item = Utilities.<span class="apidocCodeKeywordSpan">removeProps</span>(item, this.allowedProps);
+    if (!Hoek.deepEqual(item.schema, { &#x27;type&#x27;: &#x27;object&#x27; }, { prototype: false })) {
+        out.push(Utilities.deleteEmptyProperties(item));
+    }
+
+// if its an array of parameters
+} else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.removeTrailingSlash" id="apidoc.element.hapi-swagger.utilities.removeTrailingSlash">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>removeTrailingSlash
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeTrailingSlash = function (str) {
+
+    if (str.endsWith(&#x27;/&#x27;)) {
+        return str.slice(0, -1);
+    }
+    return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// collect root information
+builder.default.host = internals.getHost(request, namedConnection);
+builder.default.schemes = [internals.getSchema(request, connection)];
+
+settings = Hoek.applyToDefaults(builder.default, settings);
+if (settings.basePath !== &#x27;/&#x27;) {
+    settings.basePath = Utilities.<span class="apidocCodeKeywordSpan">removeTrailingSlash</span>(settings.basePath);
+}
+let out = internals.removeNoneSchemaOptions(settings);
+Joi.assert(out, builder.schema);
+
+
+out.info = Info.build(settings);
+out.tags = Tags.build(settings);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.replaceInPath" id="apidoc.element.hapi-swagger.utilities.replaceInPath">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>replaceInPath
+        <span class="apidocSignatureSpan">(path, applyTo, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">replaceInPath = function (path, applyTo, options) {
+
+    options.forEach((option) =&#x3e; {
+        if (applyTo.indexOf(option.replaceIn) &#x3e; -1 || option.replaceIn === &#x27;all&#x27;) {
+            path = path.replace(option.pattern, option.replacement);
+        }
+    });
+    return path;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param  {Array} pathReplacements
+ * @return {Array}
+ */
+group.getNameByPath = function (pathPrefixSize, basePath, path, pathReplacements) {
+
+
+if (pathReplacements) {
+    path = Utilities.<span class="apidocCodeKeywordSpan">replaceInPath</span>(path, [&#x27;groups&#x27;], pathReplacements);
+}
+
+let i = 0;
+let pathHead = [];
+let parts = path.split(&#x27;/&#x27;);
+
+while (parts.length &#x3e; 0) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.replaceValue" id="apidoc.element.hapi-swagger.utilities.replaceValue">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>replaceValue
+        <span class="apidocSignatureSpan">(array, current, replacement)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">replaceValue = function (array, current, replacement) {
+
+    if (array &#x26;&#x26; current &#x26;&#x26; replacement) {
+        array = Hoek.clone(array);
+        if (array.indexOf(current) &#x3e; -1) {
+            array.splice(array.indexOf(current), 1);
+            array.push(replacement);
+        }
+    }
+    return array;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        if (Utilities.geJoiLabel(joiChildObj)) {
+            itemName = Utilities.geJoiLabel(joiChildObj);
+        }
+        //name, joiObj, parent, parameterType, useDefinitions, isAlt
+        property.properties[keyName] = this.parseProperty(itemName, joiChildObj, property, parameterType, useDefinitions, isAlt);
+        // switch references if naming has changed
+        if (keyName !== itemName) {
+            property.required = Utilities.<span class="apidocCodeKeywordSpan">replaceValue</span>(property.required, itemName, keyName
+);
+            property.optional = Utilities.replaceValue(property.optional, itemName, keyName);
+        }
+    });
+    property.name = name;
+    return property;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.sortFirstItem" id="apidoc.element.hapi-swagger.utilities.sortFirstItem">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>sortFirstItem
+        <span class="apidocSignatureSpan">(array, firstItem)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sortFirstItem = function (array, firstItem) {
+
+    let out = array;
+    if (firstItem) {
+        out = [firstItem];
+        array.forEach(function (item) {
+
+            if (item !== firstItem) {
+                out.push(item);
+            }
+        });
+    }
+    return out;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+// if the API has a user set accept header with a enum convert into the produces array
+if (this.settings.acceptToProduce === true) {
+    headerStructures.parameters = headerStructures.parameters.filter(function (header) {
+
+        if (header.name.toLowerCase() === &#x27;accept&#x27;) {
+            if (header.enum) {
+                out.produces = Utilities.<span class="apidocCodeKeywordSpan">sortFirstItem</span>(header.enum, header.default);
+                return false;
+            }
+        }
+        return true;
+    });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.startsWith" id="apidoc.element.hapi-swagger.utilities.startsWith">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>startsWith
+        <span class="apidocSignatureSpan">(str, test)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startsWith = function (str, test) {
+
+    return (str.indexOf(test) === 0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @return {String}
+ */
+internals.nextModelName = function (currentCollection) {
+
+let highest = 0;
+let key;
+for (key in currentCollection) {
+    if (Utilities.<span class="apidocCodeKeywordSpan">startsWith</span>(key, &#x27;Model&#x27;)) {
+        let num = parseInt(key.replace(&#x27;Model&#x27;, &#x27;&#x27;), 10);
+        if (num &#x26;&#x26; num &#x3e; highest) {
+            highest = num;
+        }
+    }
+}
+return &#x27;Model &#x27; + (highest + 1);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.toJoiObject" id="apidoc.element.hapi-swagger.utilities.toJoiObject">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>toJoiObject
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJoiObject = function (obj) {
+
+    if (utilities.isJoi(obj) === false &#x26;&#x26; utilities.isObject(obj)) {
+        return Joi.object(obj);
+    }
+    return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+routeData.path = Utilities.replaceInPath(routeData.path, [&#x27;endpoints&#x27;], this.settings.pathReplacements);
+
+
+// user configured interface through route plugin options
+if (Hoek.reach(routeOptions, &#x27;validate.query&#x27;)) {
+    routeData.queryParams = Utilities.<span class="apidocCodeKeywordSpan">toJoiObject</span>(Hoek.reach(routeOptions, &#x27;validate
+.query&#x27;));
+}
+if (Hoek.reach(routeOptions, &#x27;validate.params&#x27;)) {
+    routeData.pathParams = Utilities.toJoiObject(Hoek.reach(routeOptions, &#x27;validate.params&#x27;));
+}
+if (Hoek.reach(routeOptions, &#x27;validate.headers&#x27;)) {
+    routeData.headerParams = Utilities.toJoiObject(Hoek.reach(routeOptions, &#x27;validate.headers&#x27;));
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.utilities.toTitleCase" id="apidoc.element.hapi-swagger.utilities.toTitleCase">
+        function <span class="apidocSignatureSpan">hapi-swagger.utilities.</span>toTitleCase
+        <span class="apidocSignatureSpan">(word)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toTitleCase = function (word) {
+
+    return word.replace(/\w\S*/g, (txt) =&#x3e; {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    const self = this;
+    if (path.indexOf(&#x27;/&#x27;) &#x3e; -1) {
+        let items = path.split(&#x27;/&#x27;);
+        items = items.map(function (item) {
+            // replace chars such as &#x27;{&#x27;
+            item = item.replace(/[^\w\s]/gi, &#x27;&#x27;);
+            return self.<span class="apidocCodeKeywordSpan">toTitleCase</span>(item);
+        });
+        path = items.join(&#x27;&#x27;);
+    } else {
+        path = self.toTitleCase(path);
+    }
+    return method.toLowerCase() + path;
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hapi-swagger.validate" id="apidoc.module.hapi-swagger.validate">module hapi-swagger.validate</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.validate.log" id="apidoc.element.hapi-swagger.validate.log">
+        function <span class="apidocSignatureSpan">hapi-swagger.validate.</span>log
+        <span class="apidocSignatureSpan">(doc, logFnc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function (doc, logFnc) {
+
+    SwaggerParser.validate(doc, (err) =&#x3e; {
+
+        // use err.message so thrown error object is not passed into testing
+        if (err) {
+            logFnc([&#x27;validation&#x27;, &#x27;error&#x27;], &#x27;FAILED - &#x27; + err.message);
+        } else {
+            logFnc([&#x27;validation&#x27;, &#x27;info&#x27;], &#x27;PASSED - The swagger.json validation passed.&#x27;);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    Vision,
+    {
+        &#x27;register&#x27;: HapiSwagger,
+        &#x27;options&#x27;: options
+    }], (err) =&#x3e; {
+        server.start( (err) =&#x3e; {
+           if (err) {
+                console.<span class="apidocCodeKeywordSpan">log</span>(err);
+            } else {
+                console.log(&#x27;Server running at:&#x27;, server.info.uri);
+            }
+        });
+    });
+
+server.route(Routes);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hapi-swagger.validate.test" id="apidoc.element.hapi-swagger.validate.test">
+        function <span class="apidocSignatureSpan">hapi-swagger.validate.</span>test
+        <span class="apidocSignatureSpan">(doc, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">test = function (doc, next) {
+
+    SwaggerParser.validate(doc, (err) =&#x3e; {
+        // use err.message so thrown error object is not passed into testing
+        if (err) {
+            next(err.message, false);
+        } else {
+            next(null, true);
+        }
+    });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
