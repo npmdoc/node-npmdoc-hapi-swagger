@@ -1,58 +1,61 @@
-<svg height="878" width="720" xmlns="http://www.w3.org/2000/svg">
-<rect height="878" fill="#555" width="720"></rect>
+<svg height="926" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="926" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">├── UNMET PEER DEPENDENCY hapi@^14.0.0 || ^15.0.0 || ^16.0.0</tspan>
-<tspan x="10" y="42">└─┬ hapi-swagger@7.7.0 </tspan>
-<tspan x="10" y="58">  ├── boom@4.3.1 </tspan>
-<tspan x="10" y="74">  ├─┬ handlebars@4.0.6 </tspan>
-<tspan x="10" y="90">  │ ├── async@1.5.2 </tspan>
-<tspan x="10" y="106">  │ ├─┬ optimist@0.6.1 </tspan>
-<tspan x="10" y="122">  │ │ ├── minimist@0.0.10 </tspan>
-<tspan x="10" y="138">  │ │ └── wordwrap@0.0.3 </tspan>
-<tspan x="10" y="154">  │ ├─┬ source-map@0.4.4 </tspan>
-<tspan x="10" y="170">  │ │ └── amdefine@1.0.1 </tspan>
-<tspan x="10" y="186">  │ └─┬ uglify-js@2.8.21 </tspan>
-<tspan x="10" y="202">  │   ├── source-map@0.5.6 </tspan>
-<tspan x="10" y="218">  │   ├── uglify-to-browserify@1.0.2 </tspan>
-<tspan x="10" y="234">  │   └─┬ yargs@3.10.0 </tspan>
-<tspan x="10" y="250">  │     ├── camelcase@1.2.1 </tspan>
-<tspan x="10" y="266">  │     ├─┬ cliui@2.1.0 </tspan>
-<tspan x="10" y="282">  │     │ ├─┬ center-align@0.1.3 </tspan>
-<tspan x="10" y="298">  │     │ │ ├─┬ align-text@0.1.4 </tspan>
-<tspan x="10" y="314">  │     │ │ │ ├─┬ kind-of@3.1.0 </tspan>
-<tspan x="10" y="330">  │     │ │ │ │ └── is-buffer@1.1.5 </tspan>
-<tspan x="10" y="346">  │     │ │ │ ├── longest@1.0.1 </tspan>
-<tspan x="10" y="362">  │     │ │ │ └── repeat-string@1.6.1 </tspan>
-<tspan x="10" y="378">  │     │ │ └── lazy-cache@1.0.4 </tspan>
-<tspan x="10" y="394">  │     │ ├── right-align@0.1.3 </tspan>
-<tspan x="10" y="410">  │     │ └── wordwrap@0.0.2 </tspan>
-<tspan x="10" y="426">  │     ├── decamelize@1.2.0 </tspan>
-<tspan x="10" y="442">  │     └── window-size@0.1.0 </tspan>
-<tspan x="10" y="458">  ├── hoek@4.1.1 </tspan>
-<tspan x="10" y="474">  ├── http-status@1.0.1 </tspan>
-<tspan x="10" y="490">  ├─┬ joi@10.2.2 </tspan>
-<tspan x="10" y="506">  │ ├── isemail@2.2.1 </tspan>
-<tspan x="10" y="522">  │ ├── items@2.1.1 </tspan>
-<tspan x="10" y="538">  │ └── topo@2.0.2 </tspan>
-<tspan x="10" y="554">  ├─┬ json-schema-ref-parser@3.1.2 </tspan>
-<tspan x="10" y="570">  │ ├── call-me-maybe@1.0.1 </tspan>
-<tspan x="10" y="586">  │ ├─┬ debug@2.6.3 </tspan>
-<tspan x="10" y="602">  │ │ └── ms@0.7.2 </tspan>
-<tspan x="10" y="618">  │ ├── es6-promise@3.3.1 </tspan>
-<tspan x="10" y="634">  │ ├─┬ js-yaml@3.8.3 </tspan>
-<tspan x="10" y="650">  │ │ ├─┬ argparse@1.0.9 </tspan>
-<tspan x="10" y="666">  │ │ │ └── sprintf-js@1.0.3 </tspan>
-<tspan x="10" y="682">  │ │ └── esprima@3.1.3 </tspan>
-<tspan x="10" y="698">  │ ├── ono@2.2.4 </tspan>
-<tspan x="10" y="714">  │ └─┬ z-schema@3.18.2 </tspan>
-<tspan x="10" y="730">  │   ├─┬ commander@2.9.0 </tspan>
-<tspan x="10" y="746">  │   │ └── graceful-readlink@1.0.1 </tspan>
-<tspan x="10" y="762">  │   ├── lodash.get@4.4.2 </tspan>
-<tspan x="10" y="778">  │   ├── lodash.isequal@4.5.0 </tspan>
-<tspan x="10" y="794">  │   └── validator@6.3.0 </tspan>
-<tspan x="10" y="810">  └─┬ swagger-parser@3.4.1 </tspan>
-<tspan x="10" y="826">    ├── json-schema-ref-parser@1.4.1 </tspan>
-<tspan x="10" y="842">    ├── swagger-methods@1.0.0 </tspan>
-<tspan x="10" y="858">    └── swagger-schema-official@2.0.0-bab6bed</tspan>
+<tspan x="10" y="26">22 megabytes installed</tspan>
+<tspan x="10" y="42"></tspan>
+<tspan x="10" y="58">node_modules</tspan>
+<tspan x="10" y="74">├── UNMET PEER DEPENDENCY hapi@^14.0.0 || ^15.0.0 || ^16.0.0</tspan>
+<tspan x="10" y="90">└─┬ hapi-swagger@7.7.0 </tspan>
+<tspan x="10" y="106">  ├── boom@4.3.1 </tspan>
+<tspan x="10" y="122">  ├─┬ handlebars@4.0.6 </tspan>
+<tspan x="10" y="138">  │ ├── async@1.5.2 </tspan>
+<tspan x="10" y="154">  │ ├─┬ optimist@0.6.1 </tspan>
+<tspan x="10" y="170">  │ │ ├── minimist@0.0.10 </tspan>
+<tspan x="10" y="186">  │ │ └── wordwrap@0.0.3 </tspan>
+<tspan x="10" y="202">  │ ├─┬ source-map@0.4.4 </tspan>
+<tspan x="10" y="218">  │ │ └── amdefine@1.0.1 </tspan>
+<tspan x="10" y="234">  │ └─┬ uglify-js@2.8.22 </tspan>
+<tspan x="10" y="250">  │   ├── source-map@0.5.6 </tspan>
+<tspan x="10" y="266">  │   ├── uglify-to-browserify@1.0.2 </tspan>
+<tspan x="10" y="282">  │   └─┬ yargs@3.10.0 </tspan>
+<tspan x="10" y="298">  │     ├── camelcase@1.2.1 </tspan>
+<tspan x="10" y="314">  │     ├─┬ cliui@2.1.0 </tspan>
+<tspan x="10" y="330">  │     │ ├─┬ center-align@0.1.3 </tspan>
+<tspan x="10" y="346">  │     │ │ ├─┬ align-text@0.1.4 </tspan>
+<tspan x="10" y="362">  │     │ │ │ ├─┬ kind-of@3.1.0 </tspan>
+<tspan x="10" y="378">  │     │ │ │ │ └── is-buffer@1.1.5 </tspan>
+<tspan x="10" y="394">  │     │ │ │ ├── longest@1.0.1 </tspan>
+<tspan x="10" y="410">  │     │ │ │ └── repeat-string@1.6.1 </tspan>
+<tspan x="10" y="426">  │     │ │ └── lazy-cache@1.0.4 </tspan>
+<tspan x="10" y="442">  │     │ ├── right-align@0.1.3 </tspan>
+<tspan x="10" y="458">  │     │ └── wordwrap@0.0.2 </tspan>
+<tspan x="10" y="474">  │     ├── decamelize@1.2.0 </tspan>
+<tspan x="10" y="490">  │     └── window-size@0.1.0 </tspan>
+<tspan x="10" y="506">  ├── hoek@4.1.1 </tspan>
+<tspan x="10" y="522">  ├── http-status@1.0.1 </tspan>
+<tspan x="10" y="538">  ├─┬ joi@10.2.2 </tspan>
+<tspan x="10" y="554">  │ ├── isemail@2.2.1 </tspan>
+<tspan x="10" y="570">  │ ├── items@2.1.1 </tspan>
+<tspan x="10" y="586">  │ └── topo@2.0.2 </tspan>
+<tspan x="10" y="602">  ├─┬ json-schema-ref-parser@3.1.2 </tspan>
+<tspan x="10" y="618">  │ ├── call-me-maybe@1.0.1 </tspan>
+<tspan x="10" y="634">  │ ├─┬ debug@2.6.3 </tspan>
+<tspan x="10" y="650">  │ │ └── ms@0.7.2 </tspan>
+<tspan x="10" y="666">  │ ├── es6-promise@3.3.1 </tspan>
+<tspan x="10" y="682">  │ ├─┬ js-yaml@3.8.3 </tspan>
+<tspan x="10" y="698">  │ │ ├─┬ argparse@1.0.9 </tspan>
+<tspan x="10" y="714">  │ │ │ └── sprintf-js@1.0.3 </tspan>
+<tspan x="10" y="730">  │ │ └── esprima@3.1.3 </tspan>
+<tspan x="10" y="746">  │ ├── ono@2.2.4 </tspan>
+<tspan x="10" y="762">  │ └─┬ z-schema@3.18.2 </tspan>
+<tspan x="10" y="778">  │   ├─┬ commander@2.9.0 </tspan>
+<tspan x="10" y="794">  │   │ └── graceful-readlink@1.0.1 </tspan>
+<tspan x="10" y="810">  │   ├── lodash.get@4.4.2 </tspan>
+<tspan x="10" y="826">  │   ├── lodash.isequal@4.5.0 </tspan>
+<tspan x="10" y="842">  │   └── validator@6.3.0 </tspan>
+<tspan x="10" y="858">  └─┬ swagger-parser@3.4.1 </tspan>
+<tspan x="10" y="874">    ├── json-schema-ref-parser@1.4.1 </tspan>
+<tspan x="10" y="890">    ├── swagger-methods@1.0.0 </tspan>
+<tspan x="10" y="906">    └── swagger-schema-official@2.0.0-bab6bed</tspan>
 </text>
 </svg>
